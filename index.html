@@ -9,6 +9,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!-- 友達追加タグ -->
+  <script>
+    function convert_pi13rxti093l(){
+    var _PMTV = "pi13rxti093l";
+    var _LPU = "https://lin.ee/7kgC7ib";
+    var _ATTRN = "href";
+    var _OPSL = ["^=", "=", "*="];
+    var _OPSV = 0;
+    var _location_url = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&scope=profile&state=false";
+    var _client_id = "2007368041";
+    var _redirect_uri = "https://jass-net.com/lineCallBack.php?p=" + _PMTV + "&cid=";
+    var _cks = document.cookie.split("; ");
+    var _cidv = "";
+    for(var i = 0; i < _cks.length; i++){ var _ckd = _cks[i].split("="); if(_ckd[0] == "CL_" + _PMTV && _ckd[1].length > 1){ _cidv = _ckd[1]; } if(_cidv) break; }
+    if(!_cidv && localStorage.getItem("CL_" + _PMTV)){ _cidv = localStorage.getItem("CL_" + _PMTV); }
+    if(_cidv){ var node_list = document.querySelectorAll('[' + _ATTRN + _OPSL[_OPSV] + '"' + _LPU + '"]'); var node = Array.prototype.slice.call(node_list, 0); var convert_url = _location_url + "&client_id=" + _client_id + "&redirect_uri=" + encodeURIComponent(_redirect_uri + _cidv); node.forEach(function(elem){ elem.setAttribute(_ATTRN, convert_url); }); } }
+    if(typeof window.acs_cbs !== "undefined"){ window.acs_cbs.push(convert_pi13rxti093l); }else if(document.readyState !== "loading"){ convert_pi13rxti093l(); }else{ document.addEventListener("DOMContentLoaded", convert_pi13rxti093l); }
+    </script>
+
+  <!-- 着地着地点タグ -->
+  <script>
+    window.acs_cbs = window.acs_cbs || [];
+    (function acsKeep(){
+    var PK = "p";
+    var IMK = "im";
+    var LKEYS = {cid : ["cid", "CL_", "ACT_"], gclid : ["plid", "PL_", "APT_"]};
+    var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
+    var PDIR = "./";
+    var durl = "https://jass-net.com/direct.php";
+    function saveCookies(data){ var p = data[PK]; var out = Object.keys(LKEYS).reduce(function(ret, k){ if(k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if(!p || !Object.keys(out).length) return;
+    var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function(k){ purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
+    var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
+    xhr.onloadend = function(){ if(xhr.status === 200 && xhr.response === ""){ window.acs_cbs.forEach(function(cb){ cb(); }); return; } Object.keys(out).forEach(function(k){ document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; if(LKEYS[k][2]) document.cookie = LKEYS[k][2] + p + "=js" + args; }); window.acs_cbs.forEach(function(cb){ cb(); }); }; xhr.send(); }
+    var data = location.search.substring(1).split("&").reduce(function(ret, s){ var kv = s.split("="); if(kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if(!(IMK in data)){ saveCookies(data); return; }
+    durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function(k){ if(!(k in data)) return; durl += "&" + k + "=" + data[k]; });
+    var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b){ return Object.keys(LKEYS).reduce(function(ret, k){ if(k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
+    xhr.onloadend = function(){ if(xhr.status !== 200) return; try{ var xhr_data = JSON.parse(xhr.responseText); if(PK != "p"){ xhr_data[PK] = xhr_data["p"]; } saveCookies(merge(xhr_data, data)); }catch(_){ } }; xhr.send(); })();
+    </script>
+
+
   <style>
     :root {
       --accent-gradient: linear-gradient(135deg, #00f0ff, #a200ff);
@@ -126,7 +166,7 @@
         <p class="text-lg md:text-xl mb-8">
           成果報酬型アフィリエイトで副収入を手に入れる！初心者でも始めやすい、SNS時代の新しいアフィリエイトASP。登録3分、すぐに広告配信スタート！
         </p>
-        <a href="#" class="inline-block accent-gradient text-white font-semibold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105">
+        <a href="https://jass-net.com/contents.php?c=c_user_login" class="inline-block accent-gradient text-white font-semibold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105">
           今すぐJASSNETに無料登録する
         </a>
       </div>
@@ -345,7 +385,7 @@
         <p class="mb-2">✅ 丁寧なLINEサポートと学習コンテンツ</p>
         <p class="mb-2">✅ 成果に応じてしっかり報酬がもらえる</p>
       </div>
-      <a href="#" class="inline-block accent-gradient text-white font-semibold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105">
+      <a href="https://jass-net.com/contents.php?c=c_user_login" class="inline-block accent-gradient text-white font-semibold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105">
         今すぐJASSNETに無料登録する
       </a>
       <p class="mt-6">アフィリエイト収入の第一歩を、ここから始めましょう！</p>
@@ -358,6 +398,7 @@
       <p>© 2025 JASSNET All Rights Reserved.</p>
     </div>
   </footer>
+
 
   <script type="module">
     import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js';
