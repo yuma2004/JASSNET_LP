@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,44 +10,120 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- 300円案件着地タグ -->
+  <script>
+    window.acs_cbs = window.acs_cbs || [];
+    function acsRelay_pi18clht944p() {
+      var PK = "p";
+      var PV = "pi18clht944p";
+      var IMK = "im";
+      var LKEYS = { cid: ["cid", "CL_"], gclid: ["plid", "PL_"] };
+      var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
+      var AURL = "https://jass-net.com/contents.php?c=user_regist";
+      var PDIR = "./";
+      var ATTR = "href";
+      var OPSL = ["^=", "=", "*="];
+      var OPSV = 0;
+      var durl = "https://jass-net.com/direct.php";
+      function convertURL() {
+        var data = document.cookie.split("; ").reduce(function (ret, s) { var kv = s.split("="); if (kv[0] && kv[1]) ret[kv[0]] = kv[1]; return ret; }, []);
+        var out = Object.keys(LKEYS).reduce(function (ret, k) { var lk = LKEYS[k][1] + PV; var val = data[lk] ? data[lk] : localStorage.getItem(lk); if (val) ret[k] = val; return ret; }, []); if (!Object.keys(out).length) return;
+        var prms = Object.keys(out).reduce(function (ret, k) { ret += "&" + k + "=" + out[k]; return ret; }, "p=" + PV);
+        var nodes = [].slice.call(document.querySelectorAll("[" + ATTR + OPSL[OPSV] + '"' + AURL + '"]'), 0); nodes.forEach(function (node) { var url = node.getAttribute(ATTR); if (/\?/.test(url)) url += "&" + prms; else url += "?" + prms; node.setAttribute(ATTR, url); });
+      }
+      function saveCookies(data) {
+        var p = data[PK]; var out = Object.keys(LKEYS).reduce(function (ret, k) { if (k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if (!p || !Object.keys(out).length) { convertURL(); return; }
+        var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function (k) { purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
+        var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
+        xhr.onloadend = function () { if (xhr.status === 200 && xhr.response === "") { convertURL(); window.acs_cbs.forEach(function (cb) { cb(); }); return; } Object.keys(out).forEach(function (k) { document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; }); convertURL(); window.acs_cbs.forEach(function (cb) { cb(); }); }; xhr.send();
+      }
+      var data = location.search.substring(1).split("&").reduce(function (ret, s) { var kv = s.split("="); if (kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if (!(IMK in data)) { saveCookies(data); return; }
+      durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function (k) { if (!(k in data)) return; durl += "&" + k + "=" + data[k]; });
+      var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b) { return Object.keys(LKEYS).reduce(function (ret, k) { if (k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
+      xhr.onloadend = function () { if (xhr.status !== 200) return; try { saveCookies(merge(JSON.parse(xhr.responseText), data)); } catch (_) { } }; xhr.send();
+    }
+    if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", acsRelay_pi18clht944p); } else { acsRelay_pi18clht944p(acsRelay_pi18clht944p); }
+  </script>
+  <!-- 5000円案件着地タグ -->
+  <script>
+    window.acs_cbs = window.acs_cbs || [];
+    function acsRelay_pi18cmy2izxq() {
+      var PK = "p";
+      var PV = "pi18cmy2izxq";
+      var IMK = "im";
+      var LKEYS = { cid: ["cid", "CL_"], gclid: ["plid", "PL_"] };
+      var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
+      var AURL = "https://jass-net.com/contents.php?c=user_regist";
+      var PDIR = "./";
+      var ATTR = "href";
+      var OPSL = ["^=", "=", "*="];
+      var OPSV = 0;
+      var durl = "https://jass-net.com/direct.php";
+      function convertURL() {
+        var data = document.cookie.split("; ").reduce(function (ret, s) { var kv = s.split("="); if (kv[0] && kv[1]) ret[kv[0]] = kv[1]; return ret; }, []);
+        var out = Object.keys(LKEYS).reduce(function (ret, k) { var lk = LKEYS[k][1] + PV; var val = data[lk] ? data[lk] : localStorage.getItem(lk); if (val) ret[k] = val; return ret; }, []); if (!Object.keys(out).length) return;
+        var prms = Object.keys(out).reduce(function (ret, k) { ret += "&" + k + "=" + out[k]; return ret; }, "p=" + PV);
+        var nodes = [].slice.call(document.querySelectorAll("[" + ATTR + OPSL[OPSV] + '"' + AURL + '"]'), 0); nodes.forEach(function (node) { var url = node.getAttribute(ATTR); if (/\?/.test(url)) url += "&" + prms; else url += "?" + prms; node.setAttribute(ATTR, url); });
+      }
+      function saveCookies(data) {
+        var p = data[PK]; var out = Object.keys(LKEYS).reduce(function (ret, k) { if (k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if (!p || !Object.keys(out).length) { convertURL(); return; }
+        var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function (k) { purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
+        var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
+        xhr.onloadend = function () { if (xhr.status === 200 && xhr.response === "") { convertURL(); window.acs_cbs.forEach(function (cb) { cb(); }); return; } Object.keys(out).forEach(function (k) { document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; }); convertURL(); window.acs_cbs.forEach(function (cb) { cb(); }); }; xhr.send();
+      }
+      var data = location.search.substring(1).split("&").reduce(function (ret, s) { var kv = s.split("="); if (kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if (!(IMK in data)) { saveCookies(data); return; }
+      durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function (k) { if (!(k in data)) return; durl += "&" + k + "=" + data[k]; });
+      var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b) { return Object.keys(LKEYS).reduce(function (ret, k) { if (k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
+      xhr.onloadend = function () { if (xhr.status !== 200) return; try { saveCookies(merge(JSON.parse(xhr.responseText), data)); } catch (_) { } }; xhr.send();
+    }
+    if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", acsRelay_pi18cmy2izxq); } else { acsRelay_pi18cmy2izxq(acsRelay_pi18cmy2izxq); }
+  </script>
+
+
+
   <!-- 友達追加タグ -->
   <script>
-    function convert_pi13rxti093l(){
-    var _PMTV = "pi13rxti093l";
-    var _LPU = "https://lin.ee/7kgC7ib";
-    var _ATTRN = "href";
-    var _OPSL = ["^=", "=", "*="];
-    var _OPSV = 0;
-    var _location_url = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&scope=profile&state=false";
-    var _client_id = "2007368041";
-    var _redirect_uri = "https://jass-net.com/lineCallBack.php?p=" + _PMTV + "&cid=";
-    var _cks = document.cookie.split("; ");
-    var _cidv = "";
-    for(var i = 0; i < _cks.length; i++){ var _ckd = _cks[i].split("="); if(_ckd[0] == "CL_" + _PMTV && _ckd[1].length > 1){ _cidv = _ckd[1]; } if(_cidv) break; }
-    if(!_cidv && localStorage.getItem("CL_" + _PMTV)){ _cidv = localStorage.getItem("CL_" + _PMTV); }
-    if(_cidv){ var node_list = document.querySelectorAll('[' + _ATTRN + _OPSL[_OPSV] + '"' + _LPU + '"]'); var node = Array.prototype.slice.call(node_list, 0); var convert_url = _location_url + "&client_id=" + _client_id + "&redirect_uri=" + encodeURIComponent(_redirect_uri + _cidv); node.forEach(function(elem){ elem.setAttribute(_ATTRN, convert_url); }); } }
-    if(typeof window.acs_cbs !== "undefined"){ window.acs_cbs.push(convert_pi13rxti093l); }else if(document.readyState !== "loading"){ convert_pi13rxti093l(); }else{ document.addEventListener("DOMContentLoaded", convert_pi13rxti093l); }
-    </script>
+    function convert_pi13rxti093l() {
+      var _PMTV = "pi13rxti093l";
+      var _LPU = "https://lin.ee/7kgC7ib";
+      var _ATTRN = "href";
+      var _OPSL = ["^=", "=", "*="];
+      var _OPSV = 0;
+      var _location_url = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&scope=profile&state=false";
+      var _client_id = "2007368041";
+      var _redirect_uri = "https://jass-net.com/lineCallBack.php?p=" + _PMTV + "&cid=";
+      var _cks = document.cookie.split("; ");
+      var _cidv = "";
+      for (var i = 0; i < _cks.length; i++) { var _ckd = _cks[i].split("="); if (_ckd[0] == "CL_" + _PMTV && _ckd[1].length > 1) { _cidv = _ckd[1]; } if (_cidv) break; }
+      if (!_cidv && localStorage.getItem("CL_" + _PMTV)) { _cidv = localStorage.getItem("CL_" + _PMTV); }
+      if (_cidv) { var node_list = document.querySelectorAll('[' + _ATTRN + _OPSL[_OPSV] + '"' + _LPU + '"]'); var node = Array.prototype.slice.call(node_list, 0); var convert_url = _location_url + "&client_id=" + _client_id + "&redirect_uri=" + encodeURIComponent(_redirect_uri + _cidv); node.forEach(function (elem) { elem.setAttribute(_ATTRN, convert_url); }); }
+    }
+    if (typeof window.acs_cbs !== "undefined") { window.acs_cbs.push(convert_pi13rxti093l); } else if (document.readyState !== "loading") { convert_pi13rxti093l(); } else { document.addEventListener("DOMContentLoaded", convert_pi13rxti093l); }
+  </script>
 
   <!-- 着地着地点タグ -->
   <script>
     window.acs_cbs = window.acs_cbs || [];
-    (function acsKeep(){
-    var PK = "p";
-    var IMK = "im";
-    var LKEYS = {cid : ["cid", "CL_", "ACT_"], gclid : ["plid", "PL_", "APT_"]};
-    var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
-    var PDIR = "./";
-    var durl = "https://jass-net.com/direct.php";
-    function saveCookies(data){ var p = data[PK]; var out = Object.keys(LKEYS).reduce(function(ret, k){ if(k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if(!p || !Object.keys(out).length) return;
-    var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function(k){ purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
-    var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
-    xhr.onloadend = function(){ if(xhr.status === 200 && xhr.response === ""){ window.acs_cbs.forEach(function(cb){ cb(); }); return; } Object.keys(out).forEach(function(k){ document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; if(LKEYS[k][2]) document.cookie = LKEYS[k][2] + p + "=js" + args; }); window.acs_cbs.forEach(function(cb){ cb(); }); }; xhr.send(); }
-    var data = location.search.substring(1).split("&").reduce(function(ret, s){ var kv = s.split("="); if(kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if(!(IMK in data)){ saveCookies(data); return; }
-    durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function(k){ if(!(k in data)) return; durl += "&" + k + "=" + data[k]; });
-    var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b){ return Object.keys(LKEYS).reduce(function(ret, k){ if(k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
-    xhr.onloadend = function(){ if(xhr.status !== 200) return; try{ var xhr_data = JSON.parse(xhr.responseText); if(PK != "p"){ xhr_data[PK] = xhr_data["p"]; } saveCookies(merge(xhr_data, data)); }catch(_){ } }; xhr.send(); })();
-    </script>
+    (function acsKeep() {
+      var PK = "p";
+      var IMK = "im";
+      var LKEYS = { cid: ["cid", "CL_", "ACT_"], gclid: ["plid", "PL_", "APT_"] };
+      var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
+      var PDIR = "./";
+      var durl = "https://jass-net.com/direct.php";
+      function saveCookies(data) {
+        var p = data[PK]; var out = Object.keys(LKEYS).reduce(function (ret, k) { if (k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if (!p || !Object.keys(out).length) return;
+        var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function (k) { purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
+        var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
+        xhr.onloadend = function () { if (xhr.status === 200 && xhr.response === "") { window.acs_cbs.forEach(function (cb) { cb(); }); return; } Object.keys(out).forEach(function (k) { document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; if (LKEYS[k][2]) document.cookie = LKEYS[k][2] + p + "=js" + args; }); window.acs_cbs.forEach(function (cb) { cb(); }); }; xhr.send();
+      }
+      var data = location.search.substring(1).split("&").reduce(function (ret, s) { var kv = s.split("="); if (kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if (!(IMK in data)) { saveCookies(data); return; }
+      durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function (k) { if (!(k in data)) return; durl += "&" + k + "=" + data[k]; });
+      var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b) { return Object.keys(LKEYS).reduce(function (ret, k) { if (k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
+      xhr.onloadend = function () { if (xhr.status !== 200) return; try { var xhr_data = JSON.parse(xhr.responseText); if (PK != "p") { xhr_data[PK] = xhr_data["p"]; } saveCookies(merge(xhr_data, data)); } catch (_) { } }; xhr.send();
+    })();
+  </script>
 
 
   <style>
@@ -57,23 +134,23 @@
       --blur-amount: 24px;
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
-    
+
     * {
       font-family: 'Inter', sans-serif;
     }
-    
+
     body {
       background-color: #f5f7fa;
-      background-image: 
+      background-image:
         radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.1) 0%, transparent 20%),
         radial-gradient(circle at 90% 80%, rgba(162, 0, 255, 0.1) 0%, transparent 20%);
       background-attachment: fixed;
     }
-    
+
     .accent-gradient {
       background: var(--accent-gradient);
     }
-    
+
     .glass {
       background: var(--glass-bg);
       backdrop-filter: blur(var(--blur-amount));
@@ -81,58 +158,58 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
       box-shadow: var(--shadow);
     }
-    
+
     .glass-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    
+
     .glass-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     }
-    
+
     .gradient-text {
       background: var(--accent-gradient);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    
+
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    
+
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .swiper {
       width: 100%;
       padding-bottom: 50px;
     }
-    
+
     .accordion-content {
       max-height: 0;
       overflow: hidden;
       padding: 0 1.5rem;
       transition: max-height 0.35s ease, padding 0.35s ease;
     }
-    
+
     .accordion-item.active .accordion-content {
       max-height: 1000px;
       padding-top: 1rem;
       padding-bottom: 1.5rem;
     }
-    
+
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #0f172a;
         color: #f1f5f9;
       }
-      
+
       .glass {
         background: var(--glass-bg-dark);
       }
@@ -155,6 +232,7 @@
     }
   </script>
 </head>
+
 <body class="min-h-screen text-gray-800 dark:text-gray-100">
   <!-- Hero Section -->
   <section class="min-h-screen grid md:grid-cols-7 relative overflow-hidden">
@@ -166,7 +244,8 @@
         <p class="text-lg md:text-xl mb-8">
           成果報酬型アフィリエイトで副収入を手に入れる！初心者でも始めやすい、SNS時代の新しいアフィリエイトASP。登録3分、すぐに広告配信スタート！
         </p>
-        <a href="https://jass-net.com/contents.php?c=c_user_login" class="inline-block accent-gradient text-white font-semibold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105">
+        <a href="https://jass-net.com/contents.php?c=c_user_login"
+          class="inline-block accent-gradient text-white font-semibold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105">
           今すぐJASSNETに無料登録する
         </a>
       </div>
@@ -186,17 +265,21 @@
 
   <!-- Features Section -->
   <section class="py-20 px-6 container mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 fade-in">アフィリエイトの<span class="gradient-text">基礎知識</span></h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 fade-in">アフィリエイトの<span class="gradient-text">基礎知識</span>
+    </h2>
     <p class="text-center text-lg mb-12 max-w-3xl mx-auto fade-in">アフィリエイトを始める前に知っておきたい重要なポイントをまとめました。</p>
     <div class="relative timeline">
-      <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary-light to-primary-dark h-full"></div>
+      <div
+        class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary-light to-primary-dark h-full">
+      </div>
       <ul class="space-y-16">
         <!-- Item 1 -->
         <li class="relative flex flex-col md:flex-row items-start fade-in">
           <div class="w-full md:w-1/2 md:pr-8">
             <div class="glass p-6 rounded-xl space-y-4">
               <h3 class="text-xl font-semibold">アフィリエイトとは？ネットで稼ぐ仕組みを解説</h3>
-              <p class="text-gray-700 dark:text-gray-300">アフィリエイトとは、商品やサービスを紹介して、その紹介経由で申し込み・購入が発生した場合に報酬を受け取れる仕組みです。</p>
+              <p class="text-gray-700 dark:text-gray-300">アフィリエイトとは、商品やサービスを紹介して、その紹介経由で申し込み・購入が発生した場合に報酬を受け取れる仕組みです。
+              </p>
               <ul class="space-y-2">
                 <li class="flex items-center"><span class="text-primary-DEFAULT mr-2">✓</span>商品の仕入れ・在庫管理不要</li>
                 <li class="flex items-center"><span class="text-primary-DEFAULT mr-2">✓</span>完全在宅・スマホだけでOK</li>
@@ -204,7 +287,9 @@
               </ul>
             </div>
           </div>
-          <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">1</div>
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">
+            1</div>
         </li>
         <!-- Item 2 -->
         <li class="relative flex flex-col md:flex-row-reverse items-start fade-in">
@@ -218,14 +303,17 @@
               </ul>
             </div>
           </div>
-          <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">2</div>
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">
+            2</div>
         </li>
         <!-- Item 3 -->
         <li class="relative flex flex-col md:flex-row items-start fade-in">
           <div class="w-full md:w-1/2 md:pr-8">
             <div class="glass p-6 rounded-xl space-y-4">
               <h3 class="text-xl font-semibold">JASSNETとは？初心者の不安を解消する新しいASP</h3>
-              <p class="text-gray-700 dark:text-gray-300">『JASSNET（ジャスネット）』は、株式会社JASSが提供する初心者向けにやさしい成果報酬型アフィリエイトサービスです。</p>
+              <p class="text-gray-700 dark:text-gray-300">『JASSNET（ジャスネット）』は、株式会社JASSが提供する初心者向けにやさしい成果報酬型アフィリエイトサービスです。
+              </p>
               <h4 class="font-semibold mt-4 mb-2">JASSNETの強み</h4>
               <ul class="space-y-2 text-gray-700 dark:text-gray-300">
                 <li><span class="text-primary-DEFAULT mr-1">✓</span> CPI案件に特化したASP！</li>
@@ -243,7 +331,9 @@
               </ul>
             </div>
           </div>
-          <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">3</div>
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">
+            3</div>
         </li>
         <!-- Item 4 -->
         <li class="relative flex flex-col md:flex-row-reverse items-start fade-in">
@@ -256,7 +346,9 @@
               </ul>
             </div>
           </div>
-          <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">4</div>
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">
+            4</div>
         </li>
         <!-- Item 5 -->
         <li class="relative flex flex-col md:flex-row items-start fade-in">
@@ -267,16 +359,18 @@
               <a href="#comparison" class="text-primary-DEFAULT font-semibold underline">比較表を見る</a>
             </div>
           </div>
-          <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">5</div>
+          <div
+            class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 -mt-2 bg-primary-DEFAULT text-white w-8 h-8 rounded-full items-center justify-center">
+            5</div>
         </li>
       </ul>
     </div>
   </section>
-  
+
   <!-- Testimonials Section -->
   <section class="py-16 px-6 container mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 fade-in">利用者の<span class="gradient-text">声</span></h2>
-    
+
     <div class="swiper testimonialSwiper fade-in">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -297,11 +391,11 @@
       <div class="swiper-pagination"></div>
     </div>
   </section>
-  
+
   <!-- Pricing/Recommendation Section -->
   <section class="py-16 px-6 container mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 fade-in">報酬・<span class="gradient-text">おすすめ</span></h2>
-    
+
     <div class="glass rounded-xl p-8 max-w-2xl mx-auto fade-in">
       <h3 class="text-2xl font-semibold mb-6">JASSNETはこんな人におすすめ！</h3>
       <ul class="space-y-3 text-lg">
@@ -328,17 +422,18 @@
       </ul>
     </div>
   </section>
-  
+
   <!-- FAQ Section -->
   <section class="py-16 px-6 container mx-auto">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 fade-in">よくある<span class="gradient-text">質問</span></h2>
-    
+
     <div class="fade-in space-y-6 max-w-3xl mx-auto">
       <!-- FAQ Item 1 -->
       <div class="accordion-item glass rounded-xl overflow-hidden w-full">
         <button class="w-full text-left p-6 flex justify-between items-center font-semibold">
           <span>SNSだけでも始められますか？</span>
-          <svg class="w-5 h-5 transform transition-transform accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 transform transition-transform accordion-arrow" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
@@ -346,12 +441,13 @@
           <p>はい。InstagramやXなどのSNSアカウントでも問題ありません。</p>
         </div>
       </div>
-      
+
       <!-- FAQ Item 2 -->
       <div class="accordion-item glass rounded-xl overflow-hidden w-full">
         <button class="w-full text-left p-6 flex justify-between items-center font-semibold">
           <span>どういうジャンルの広告がありますか？</span>
-          <svg class="w-5 h-5 transform transition-transform accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 transform transition-transform accordion-arrow" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
@@ -359,12 +455,13 @@
           <p>CPI案件（ゲーム/ライブ配信/不動産/恋愛/スポーツベッティング等）を中心に、美容・脱毛・エステ・健康・投資・副業・アプリ紹介など、初心者向け・SNS向けの案件が豊富です。</p>
         </div>
       </div>
-      
+
       <!-- FAQ Item 3 -->
       <div class="accordion-item glass rounded-xl overflow-hidden w-full">
         <button class="w-full text-left p-6 flex justify-between items-center font-semibold">
           <span>スマホだけでもできますか？</span>
-          <svg class="w-5 h-5 transform transition-transform accordion-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5 transform transition-transform accordion-arrow" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
@@ -374,7 +471,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Final CTA Section -->
   <section class="py-16 px-6 container mx-auto">
     <div class="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto text-center fade-in">
@@ -385,13 +482,14 @@
         <p class="mb-2">✅ 丁寧なLINEサポートと学習コンテンツ</p>
         <p class="mb-2">✅ 成果に応じてしっかり報酬がもらえる</p>
       </div>
-      <a href="https://jass-net.com/contents.php?c=c_user_login" class="inline-block accent-gradient text-white font-semibold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105">
+      <a href="https://jass-net.com/contents.php?c=c_user_login"
+        class="inline-block accent-gradient text-white font-semibold px-8 py-4 rounded-full text-lg transition-transform hover:scale-105">
         今すぐJASSNETに無料登録する
       </a>
       <p class="mt-6">アフィリエイト収入の第一歩を、ここから始めましょう！</p>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer class="py-8 border-t border-gray-200 dark:border-gray-800">
     <div class="container mx-auto px-6 text-center text-gray-600 dark:text-gray-400 text-sm">
@@ -402,7 +500,7 @@
 
   <script type="module">
     import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js';
-    
+
     // Initialize Swiper
     const testimonialSwiper = new Swiper('.testimonialSwiper', {
       slidesPerView: 1,
@@ -425,7 +523,7 @@
         }
       }
     });
-    
+
     // Intersection Observer for fade-in animations
     const fadeElements = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
@@ -435,27 +533,27 @@
         }
       });
     }, { threshold: 0.1 });
-    
+
     fadeElements.forEach(element => {
       observer.observe(element);
     });
-    
+
     // FAQ Accordion
     const accordionItems = document.querySelectorAll('.accordion-item');
-    
+
     accordionItems.forEach(item => {
       const button = item.querySelector('button');
       const arrow = item.querySelector('.accordion-arrow');
-      
+
       button.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-        
+
         // Close all accordions
         accordionItems.forEach(accItem => {
           accItem.classList.remove('active');
           accItem.querySelector('.accordion-arrow').classList.remove('rotate-180');
         });
-        
+
         // If the clicked item wasn't active, open it
         if (!isActive) {
           item.classList.add('active');
@@ -463,23 +561,23 @@
         }
       });
     });
-    
+
     // Comparison table behavior
     const comparisonLink = document.querySelector('a[href="#comparison"]');
     const comparisonTable = document.getElementById('comparison');
-    
+
     if (comparisonLink && comparisonTable) {
       // Hide comparison table initially with inline style
       comparisonTable.style.display = 'none';
-      
+
       comparisonLink.addEventListener('click', (e) => {
         e.preventDefault();
-        
+
         // Toggle table display
         if (comparisonTable.style.display === 'none') {
           comparisonTable.style.display = 'block';
           comparisonTable.scrollIntoView({ behavior: 'smooth' });
-          
+
           // Rotate arrow icon
           const arrow = comparisonLink.querySelector('svg');
           if (arrow) {
@@ -487,7 +585,7 @@
           }
         } else {
           comparisonTable.style.display = 'none';
-          
+
           // Reset arrow icon
           const arrow = comparisonLink.querySelector('svg');
           if (arrow) {
@@ -498,4 +596,5 @@
     }
   </script>
 </body>
-</html> 
+
+</html>
