@@ -11,112 +11,45 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-  <!-- 300円案件着地タグ -->
-  <!-- <script>
-    window.acs_cbs = window.acs_cbs || [];
-    function acsRelay_pi18clht944p() {
-      var PK = "p";
-      var PV = "pi18clht944p";
-      var IMK = "im";
-      var LKEYS = { cid: ["cid", "CL_"], gclid: ["plid", "PL_"] };
-      var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
-      var AURL = "https://jass-net.com/contents.php?c=user_regist";
-      var PDIR = "./";
-      var ATTR = "href";
-      var OPSL = ["^=", "=", "*="];
-      var OPSV = 0;
-      var durl = "https://jass-net.com/direct.php";
-      function convertURL() {
-        var data = document.cookie.split("; ").reduce(function (ret, s) { var kv = s.split("="); if (kv[0] && kv[1]) ret[kv[0]] = kv[1]; return ret; }, []);
-        var out = Object.keys(LKEYS).reduce(function (ret, k) { var lk = LKEYS[k][1] + PV; var val = data[lk] ? data[lk] : localStorage.getItem(lk); if (val) ret[k] = val; return ret; }, []); if (!Object.keys(out).length) return;
-        var prms = Object.keys(out).reduce(function (ret, k) { ret += "&" + k + "=" + out[k]; return ret; }, "p=" + PV);
-        var nodes = [].slice.call(document.querySelectorAll("[" + ATTR + OPSL[OPSV] + '"' + AURL + '"]'), 0); nodes.forEach(function (node) { var url = node.getAttribute(ATTR); if (/\?/.test(url)) url += "&" + prms; else url += "?" + prms; node.setAttribute(ATTR, url); });
-      }
-      function saveCookies(data) {
-        var p = data[PK]; var out = Object.keys(LKEYS).reduce(function (ret, k) { if (k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if (!p || !Object.keys(out).length) { convertURL(); return; }
-        var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function (k) { purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
-        var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
-        xhr.onloadend = function () { if (xhr.status === 200 && xhr.response === "") { convertURL(); window.acs_cbs.forEach(function (cb) { cb(); }); return; } Object.keys(out).forEach(function (k) { document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; }); convertURL(); window.acs_cbs.forEach(function (cb) { cb(); }); }; xhr.send();
-      }
-      var data = location.search.substring(1).split("&").reduce(function (ret, s) { var kv = s.split("="); if (kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if (!(IMK in data)) { saveCookies(data); return; }
-      durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function (k) { if (!(k in data)) return; durl += "&" + k + "=" + data[k]; });
-      var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b) { return Object.keys(LKEYS).reduce(function (ret, k) { if (k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
-      xhr.onloadend = function () { if (xhr.status !== 200) return; try { saveCookies(merge(JSON.parse(xhr.responseText), data)); } catch (_) { } }; xhr.send();
-    }
-    if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", acsRelay_pi18clht944p); } else { acsRelay_pi18clht944p(acsRelay_pi18clht944p); }
-  </script> -->
-  <!-- 5000円案件着地タグ -->
-  <!-- <script>
-    window.acs_cbs = window.acs_cbs || [];
-    function acsRelay_pi18cmy2izxq() {
-      var PK = "p";
-      var PV = "pi18cmy2izxq";
-      var IMK = "im";
-      var LKEYS = { cid: ["cid", "CL_"], gclid: ["plid", "PL_"] };
-      var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
-      var AURL = "https://jass-net.com/contents.php?c=user_regist";
-      var PDIR = "./";
-      var ATTR = "href";
-      var OPSL = ["^=", "=", "*="];
-      var OPSV = 0;
-      var durl = "https://jass-net.com/direct.php";
-      function convertURL() {
-        var data = document.cookie.split("; ").reduce(function (ret, s) { var kv = s.split("="); if (kv[0] && kv[1]) ret[kv[0]] = kv[1]; return ret; }, []);
-        var out = Object.keys(LKEYS).reduce(function (ret, k) { var lk = LKEYS[k][1] + PV; var val = data[lk] ? data[lk] : localStorage.getItem(lk); if (val) ret[k] = val; return ret; }, []); if (!Object.keys(out).length) return;
-        var prms = Object.keys(out).reduce(function (ret, k) { ret += "&" + k + "=" + out[k]; return ret; }, "p=" + PV);
-        var nodes = [].slice.call(document.querySelectorAll("[" + ATTR + OPSL[OPSV] + '"' + AURL + '"]'), 0); nodes.forEach(function (node) { var url = node.getAttribute(ATTR); if (/\?/.test(url)) url += "&" + prms; else url += "?" + prms; node.setAttribute(ATTR, url); });
-      }
-      function saveCookies(data) {
-        var p = data[PK]; var out = Object.keys(LKEYS).reduce(function (ret, k) { if (k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if (!p || !Object.keys(out).length) { convertURL(); return; }
-        var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function (k) { purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
-        var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
-        xhr.onloadend = function () { if (xhr.status === 200 && xhr.response === "") { convertURL(); window.acs_cbs.forEach(function (cb) { cb(); }); return; } Object.keys(out).forEach(function (k) { document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; }); convertURL(); window.acs_cbs.forEach(function (cb) { cb(); }); }; xhr.send();
-      }
-      var data = location.search.substring(1).split("&").reduce(function (ret, s) { var kv = s.split("="); if (kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if (!(IMK in data)) { saveCookies(data); return; }
-      durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function (k) { if (!(k in data)) return; durl += "&" + k + "=" + data[k]; });
-      var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b) { return Object.keys(LKEYS).reduce(function (ret, k) { if (k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
-      xhr.onloadend = function () { if (xhr.status !== 200) return; try { saveCookies(merge(JSON.parse(xhr.responseText), data)); } catch (_) { } }; xhr.send();
-    }
-    if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", acsRelay_pi18cmy2izxq); } else { acsRelay_pi18cmy2izxq(acsRelay_pi18cmy2izxq); }
-  </script> -->
-
-  <!-- 友達追加タグ -->
-    <script>
-      function convert_pi13rxti093l(){
+  <script>
+    function convert_pi13rxti093l() {
       var _PMTV = "pi13rxti093l";
-      var _LPU = "https://lin.ee/NHbwYsi";
+      var _LPU = "https://lin.ee/jlmVHob";
       var _ATTRN = "href";
       var _OPSL = ["^=", "=", "*="];
       var _OPSV = 0;
       var _location_url = "https://access.line.me/oauth2/v2.1/authorize?response_type=code&scope=profile&state=false";
-      var _client_id = "2007365408";
+      var _client_id = "2007368041";
       var _redirect_uri = "https://jass-net.com/lineCallBack.php?p=" + _PMTV + "&cid=";
       var _cks = document.cookie.split("; ");
       var _cidv = "";
-      for(var i = 0; i < _cks.length; i++){ var _ckd = _cks[i].split("="); if(_ckd[0] == "CL_" + _PMTV && _ckd[1].length > 1){ _cidv = _ckd[1]; } if(_cidv) break; }
-      if(!_cidv && localStorage.getItem("CL_" + _PMTV)){ _cidv = localStorage.getItem("CL_" + _PMTV); }
-      if(_cidv){ var node_list = document.querySelectorAll('[' + _ATTRN + _OPSL[_OPSV] + '"' + _LPU + '"]'); var node = Array.prototype.slice.call(node_list, 0); var convert_url = _location_url + "&client_id=" + _client_id + "&redirect_uri=" + encodeURIComponent(_redirect_uri + _cidv); node.forEach(function(elem){ elem.setAttribute(_ATTRN, convert_url); }); } }
-      if(typeof window.acs_cbs !== "undefined"){ window.acs_cbs.push(convert_pi13rxti093l); }else if(document.readyState !== "loading"){ convert_pi13rxti093l(); }else{ document.addEventListener("DOMContentLoaded", convert_pi13rxti093l); }
-    </script>
+      for (var i = 0; i < _cks.length; i++) { var _ckd = _cks[i].split("="); if (_ckd[0] == "CL_" + _PMTV && _ckd[1].length > 1) { _cidv = _ckd[1]; } if (_cidv) break; }
+      if (!_cidv && localStorage.getItem("CL_" + _PMTV)) { _cidv = localStorage.getItem("CL_" + _PMTV); }
+      if (_cidv) { var node_list = document.querySelectorAll('[' + _ATTRN + _OPSL[_OPSV] + '"' + _LPU + '"]'); var node = Array.prototype.slice.call(node_list, 0); var convert_url = _location_url + "&client_id=" + _client_id + "&redirect_uri=" + encodeURIComponent(_redirect_uri + _cidv); node.forEach(function (elem) { elem.setAttribute(_ATTRN, convert_url); }); }
+    }
+    if (typeof window.acs_cbs !== "undefined") { window.acs_cbs.push(convert_pi13rxti093l); } else if (document.readyState !== "loading") { convert_pi13rxti093l(); } else { document.addEventListener("DOMContentLoaded", convert_pi13rxti093l); }
+  </script>
 
-<!-- 着地点タグ -->
   <script>
     window.acs_cbs = window.acs_cbs || [];
-    (function acsKeep(){
-    var PK = "p";
-    var IMK = "im";
-    var LKEYS = {cid : ["cid", "CL_", "ACT_"], gclid : ["plid", "PL_", "APT_"]};
-    var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
-    var PDIR = "./";
-    var durl = "https://jass-net.com/direct.php";
-    function saveCookies(data){ var p = data[PK]; var out = Object.keys(LKEYS).reduce(function(ret, k){ if(k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if(!p || !Object.keys(out).length) return;
-    var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function(k){ purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
-    var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
-    xhr.onloadend = function(){ if(xhr.status === 200 && xhr.response === ""){ window.acs_cbs.forEach(function(cb){ cb(); }); return; } Object.keys(out).forEach(function(k){ document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; if(LKEYS[k][2]) document.cookie = LKEYS[k][2] + p + "=js" + args; }); window.acs_cbs.forEach(function(cb){ cb(); }); }; xhr.send(); }
-    var data = location.search.substring(1).split("&").reduce(function(ret, s){ var kv = s.split("="); if(kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if(!(IMK in data)){ saveCookies(data); return; }
-    durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function(k){ if(!(k in data)) return; durl += "&" + k + "=" + data[k]; });
-    var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b){ return Object.keys(LKEYS).reduce(function(ret, k){ if(k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
-    xhr.onloadend = function(){ if(xhr.status !== 200) return; try{ var xhr_data = JSON.parse(xhr.responseText); if(PK != "p"){ xhr_data[PK] = xhr_data["p"]; } saveCookies(merge(xhr_data, data)); }catch(_){ } }; xhr.send(); })();
+    (function acsKeep() {
+      var PK = "p";
+      var IMK = "im";
+      var LKEYS = { cid: ["cid", "CL_", "ACT_"], gclid: ["plid", "PL_", "APT_"] };
+      var DKEYS = ["gclid", "msclkid", "fbclid", "yclid", "ttclid", "ldtag_cl", "msi"];
+      var PDIR = "./";
+      var durl = "https://jass-net.com/direct.php";
+      function saveCookies(data) {
+        var p = data[PK]; var out = Object.keys(LKEYS).reduce(function (ret, k) { if (k in data && data[k]) ret[k] = data[k]; return ret; }, {}); if (!p || !Object.keys(out).length) return;
+        var purl = PDIR + "lptag.php?p=" + p; Object.keys(out).forEach(function (k) { purl += "&" + LKEYS[k][0] + "=" + out[k]; localStorage.setItem(LKEYS[k][1] + p, out[k]); });
+        var xhr = new XMLHttpRequest(); var args = "; expires=" + new Date(new Date().getTime() + 63072000000).toUTCString() + "; path=/; SameSite=None; Secure"; xhr.open("GET", purl);
+        xhr.onloadend = function () { if (xhr.status === 200 && xhr.response === "") { window.acs_cbs.forEach(function (cb) { cb(); }); return; } Object.keys(out).forEach(function (k) { document.cookie = LKEYS[k][1] + p + "=" + decodeURIComponent(out[k]) + args; if (LKEYS[k][2]) document.cookie = LKEYS[k][2] + p + "=js" + args; }); window.acs_cbs.forEach(function (cb) { cb(); }); }; xhr.send();
+      }
+      var data = location.search.substring(1).split("&").reduce(function (ret, s) { var kv = s.split("="); if (kv[1]) ret[kv[0]] = kv[1]; return ret; }, {}); if (!(IMK in data)) { saveCookies(data); return; }
+      durl += "?im=" + data[IMK] + "&navi=" + performance.navigation.type; DKEYS.forEach(function (k) { if (!(k in data)) return; durl += "&" + k + "=" + data[k]; });
+      var xhr = new XMLHttpRequest(); xhr.open("GET", durl); function merge(a, b) { return Object.keys(LKEYS).reduce(function (ret, k) { if (k in b && !(k in a)) ret[k] = b[k]; return ret; }, a); }
+      xhr.onloadend = function () { if (xhr.status !== 200) return; try { var xhr_data = JSON.parse(xhr.responseText); if (PK != "p") { xhr_data[PK] = xhr_data["p"]; } saveCookies(merge(xhr_data, data)); } catch (_) { } }; xhr.send();
+    })();
   </script>
 
 
@@ -472,7 +405,8 @@
   <section class="py-16 px-6 container mx-auto">
     <div class="glass rounded-xl p-8 md:p-12 max-w-3xl mx-auto text-center fade-in">
       <h2 class="text-3xl font-bold mb-6">LINEでお得な情報をゲット！</h2>
-      <img src="https://qr-official.line.me/sid/L/069qdlhi.png" alt="LINE QR Code" class="mx-auto mb-6 w-40 h-40 rounded-lg shadow-md">
+      <img src="https://qr-official.line.me/sid/L/069qdlhi.png" alt="LINE QR Code"
+        class="mx-auto mb-6 w-40 h-40 rounded-lg shadow-md">
       <p class="mb-8 text-lg">
         JASSNETの最新情報や、アフィリエイトに役立つ限定コンテンツをLINEでお届けします。<br>今すぐ友だち追加してお得な情報を見逃さないようにしましょう！
       </p>
