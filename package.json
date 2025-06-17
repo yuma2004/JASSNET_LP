@@ -1,0 +1,38 @@
+{
+  "name": "jassnet-lp",
+  "version": "2.0.0",
+  "description": "JASSNET Landing Page - Refactored & Optimized",
+  "scripts": {
+    "dev": "npx live-server --port=3000 --host=localhost",
+    "build": "npm run minify:css && npm run minify:js",
+    "minify:css": "npx cleancss -o dist/styles.min.css css/*.css",
+    "minify:js": "npx terser js/*.js script.js -o dist/scripts.min.js",
+    "lint:css": "npx stylelint 'css/*.css'",
+    "lint:js": "npx eslint js/*.js script.js",
+    "test": "npx lighthouse http://localhost:3000 --output=html --output-path=./reports/lighthouse.html",
+    "analyze": "npx webpack-bundle-analyzer dist/scripts.min.js"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "terser": "^5.19.2",
+    "stylelint": "^15.10.1",
+    "eslint": "^8.44.0",
+    "live-server": "^1.2.2",
+    "lighthouse": "^10.4.0",
+    "webpack-bundle-analyzer": "^4.9.0"
+  },
+  "keywords": [
+    "landing-page",
+    "affiliate",
+    "responsive",
+    "modern-ui",
+    "performance-optimized"
+  ],
+  "author": "JASSNET Team",
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

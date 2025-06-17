@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+
+/* Container System */
+.container-modern {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+.section-modern {
+  padding: var(--section-spacing) 0;
+  position: relative;
+}
+
+.section-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    var(--primary-default) 50%, 
+    transparent 100%);
+  opacity: 0.3;
+}
+
+/* Section Headers */
+.section-header-modern {
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.section-title-modern {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.section-subtitle-modern {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Glass Morphism Effects */
+.glass-modern {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent);
+}
+
+.glass-darker {
+  background: var(--glass-bg-dark);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Glass Card Effects */
+.glass-card-modern {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-style: preserve-3d;
+}
+
+.glass-card-modern:hover {
+  transform: translateY(-8px) rotateX(5deg);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Grid Systems */
+.card-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+/* Utility Classes */
+.accent-gradient {
+  background: var(--accent-gradient);
+}
+
+.gradient-border {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-lg);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: var(--accent-gradient);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+}
+
+/* Responsive Utilities */
+.hidden-mobile {
+  display: block;
+}
+
+.visible-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .section-modern {
+    padding: var(--section-spacing-mobile) 0;
+  }
+  
+  .container-modern {
+    padding: 0 var(--container-padding-mobile);
+  }
+  
+  .section-header-modern {
+    margin-bottom: 3rem;
+  }
+  
+  .section-title-modern {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle-modern {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+  
+  .card-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .hidden-mobile {
+    display: none;
+  }
+  
+  .visible-mobile {
+    display: block;
+  }
+  
+  .glass-modern {
+    backdrop-filter: blur(var(--blur-mobile));
+    border-radius: var(--border-radius-md);
+  }
+  
+  .glass-card-modern:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .section-modern {
+    padding: calc(var(--section-spacing-mobile) * 0.8) 0;
+  }
+  
+  .container-modern {
+    padding: 0 1rem;
+  }
+  
+  .section-header-modern {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title-modern {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+    line-height: 1.1;
+  }
+  
+  .section-subtitle-modern {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .glass-card-modern:hover {
+    transform: none;
+  }
+  
+  .glass-card-modern:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Spacing Utilities */
+.space-y-2 > * + * { margin-top: 0.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-8 > * + * { margin-top: 2rem; }
+
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-12 { margin-bottom: 3rem; }
+
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mt-12 { margin-top: 3rem; }
+
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.p-12 { padding: 3rem; }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
