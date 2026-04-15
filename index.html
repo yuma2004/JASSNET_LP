@@ -359,90 +359,17 @@
     .hero-mascot {
       position: relative;
       z-index: 1;
-      width: min(100%, 280px);
+      width: min(100%, 340px);
       margin: 0;
-    }
-
-    .hero-mascot__frame {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 1.25rem;
-      padding: 0.65rem 0.5rem 0.85rem;
-      box-shadow:
-        0 28px 60px rgba(0, 0, 0, 0.35),
-        0 0 0 1px rgba(255, 255, 255, 0.06) inset;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
       transform-origin: 50% 88%;
       animation: hero-phone-sway 6.5s ease-in-out infinite;
     }
 
-    /* 黒地の線画JPEGを紺背景と合成（透過PNGがなくても自然に見える） */
     .hero-mascot__img {
       width: 100%;
       height: auto;
       display: block;
-      mix-blend-mode: screen;
-    }
-
-    /* Floating badges */
-    .hero-float {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      z-index: 2;
-      animation: hero-float-drift 4.2s ease-in-out infinite;
-    }
-
-    .hero-float--heart {
-      top: 12%;
-      right: 2%;
-      width: 46px;
-      height: 46px;
-      background: var(--c-white);
-      box-shadow: 0 6px 20px rgba(58,109,176,0.2);
-      animation-duration: 4.5s;
-      animation-delay: 0s;
-    }
-
-    .hero-float--yen {
-      bottom: 18%;
-      right: 0;
-      width: 50px;
-      height: 50px;
-      background: var(--c-gold);
-      color: var(--c-white);
-      font-family: var(--f-number);
-      font-size: 1.3rem;
-      box-shadow: 0 6px 20px rgba(90,113,153,0.28);
-      animation-duration: 5.2s;
-      animation-delay: 0.4s;
-    }
-
-    .hero-float--arrow {
-      top: 4%;
-      left: 8%;
-      width: 42px;
-      height: 42px;
-      background: var(--c-white);
-      box-shadow: 0 6px 20px rgba(15,126,160,0.2);
-      animation-duration: 3.8s;
-      animation-delay: 0.2s;
-    }
-
-    .hero-float--star {
-      bottom: 8%;
-      left: 4%;
-      width: 42px;
-      height: 42px;
-      background: var(--c-white);
-      box-shadow: 0 6px 20px rgba(90,113,153,0.18);
-      animation-duration: 4.9s;
-      animation-delay: 0.65s;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
     }
 
     .hero .btn--primary {
@@ -1201,18 +1128,6 @@
       50% { transform: rotate(1.4deg) translateY(-7px); }
     }
 
-    @keyframes hero-float-drift {
-      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-      35% { transform: translate3d(3px, -14px, 0) rotate(5deg); }
-      70% { transform: translate3d(-2px, -6px, 0) rotate(-3deg); }
-    }
-
-    @keyframes hero-float-drift-sm {
-      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(0.85); }
-      35% { transform: translate3d(2px, -11px, 0) rotate(4deg) scale(0.85); }
-      70% { transform: translate3d(-2px, -5px, 0) rotate(-2deg) scale(0.85); }
-    }
-
     @keyframes hero-cta-glow {
       0%, 100% {
         box-shadow:
@@ -1255,9 +1170,8 @@
         animation: none !important;
         opacity: 1 !important;
       }
-      .hero-mascot__frame { animation: none; }
+      .hero-mascot { animation: none; }
       .hero .btn--primary { animation: none; }
-      .hero-float { animation: none !important; }
       .mid-cta { animation: none; background-size: auto; }
       .about::before,
       .closing::before { animation: none; }
@@ -1332,10 +1246,6 @@
         margin-right: auto;
       }
 
-      .hero-float {
-        animation-name: hero-float-drift-sm;
-      }
-
       .hero__cta-group {
         flex-direction: column;
       }
@@ -1378,11 +1288,6 @@
 
       .hero__visual {
         min-height: 240px;
-      }
-
-      .hero-float--heart,
-      .hero-float--star {
-        display: none;
       }
 
       .sns-icon {
@@ -1436,20 +1341,8 @@
         <div class="hero__visual hero-enter hero-enter--viz" aria-hidden="true">
           <div class="hero-glow"></div>
           <figure class="hero-mascot">
-            <div class="hero-mascot__frame">
-              <img class="hero-mascot__img" src="assets/jassmin-mascot.jpg" width="777" height="1024" alt="" loading="eager" decoding="async">
-            </div>
+            <img class="hero-mascot__img" src="assets/jassmin-mascot.png" width="737" height="607" alt="" loading="eager" decoding="async">
           </figure>
-          <div class="hero-float hero-float--heart">
-            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true"><path d="M10 17.5l-1.45-1.32C3.4 11.36 0 8.28 0 4.5 0 1.42 2.42 0 5 0c1.74 0 3.41.81 5 2.28C11.59.81 13.26 0 15 0c2.58 0 5 1.42 5 4.5 0 3.78-3.4 6.86-8.55 11.68L10 17.5z" fill="#3A6DB0"/></svg>
-          </div>
-          <div class="hero-float hero-float--yen">&yen;</div>
-          <div class="hero-float hero-float--arrow">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 15L15 3M15 3H7M15 3v8" stroke="#0F7EA0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div class="hero-float hero-float--star">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 0l2.35 5.18L16 5.82l-4 3.64L13.18 16 8 12.9 2.82 16 4 9.46 0 5.82l5.65-.64L8 0z" fill="#5CBFE0"/></svg>
-          </div>
         </div>
       </div>
     </section>
