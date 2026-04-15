@@ -51,6 +51,11 @@
       --r-md: 0.5rem;
       --r-lg: 0.625rem;
       --r-xl: 0.875rem;
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-spring: cubic-bezier(0.34, 1.2, 0.64, 1);
+      --t-hero: 0.88s;
+      --t-reveal: 0.8s;
     }
 
     /* ========================================
@@ -112,6 +117,7 @@
       border-bottom: 1px solid var(--c-border);
       display: flex;
       align-items: center;
+      animation: header-drop 0.7s var(--ease-out-expo) both;
     }
 
     .header__inner {
@@ -219,6 +225,7 @@
       background: radial-gradient(circle, var(--c-sage-faint) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
+      animation: hero-orb-drift 14s ease-in-out infinite;
     }
 
     .hero__grid {
@@ -325,6 +332,23 @@
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 50%;
+      animation: hero-glow-pulse 5s ease-in-out infinite;
+    }
+
+    .hero-enter {
+      opacity: 0;
+      animation: hero-rise var(--t-hero) var(--ease-out-expo) both;
+    }
+
+    .hero-enter--1 { animation-delay: 0.06s; }
+    .hero-enter--2 { animation-delay: 0.16s; }
+    .hero-enter--3 { animation-delay: 0.3s; }
+    .hero-enter--4 { animation-delay: 0.42s; }
+    .hero-enter--5 { animation-delay: 0.54s; }
+    .hero-enter--viz {
+      animation-name: hero-visual-in;
+      animation-duration: 1.05s;
+      animation-delay: 0.2s;
     }
 
     .hero-phone {
@@ -336,6 +360,8 @@
       padding: 10px;
       box-shadow: 0 30px 70px rgba(28,43,74,0.22), 0 8px 20px rgba(28,43,74,0.1);
       z-index: 1;
+      transform-origin: 50% 85%;
+      animation: hero-phone-sway 6.5s ease-in-out infinite;
     }
 
     .hero-phone__notch {
@@ -416,7 +442,7 @@
       justify-content: center;
       border-radius: 50%;
       z-index: 2;
-      animation: float-gentle 5s ease-in-out infinite;
+      animation: hero-float-drift 4.2s ease-in-out infinite;
     }
 
     .hero-float--heart {
@@ -426,6 +452,7 @@
       height: 46px;
       background: var(--c-white);
       box-shadow: 0 6px 20px rgba(58,109,176,0.2);
+      animation-duration: 4.5s;
       animation-delay: 0s;
     }
 
@@ -439,7 +466,8 @@
       font-family: var(--f-number);
       font-size: 1.3rem;
       box-shadow: 0 6px 20px rgba(90,113,153,0.28);
-      animation-delay: 1.2s;
+      animation-duration: 5.2s;
+      animation-delay: 0.4s;
     }
 
     .hero-float--arrow {
@@ -449,7 +477,8 @@
       height: 42px;
       background: var(--c-white);
       box-shadow: 0 6px 20px rgba(15,126,160,0.2);
-      animation-delay: 2.4s;
+      animation-duration: 3.8s;
+      animation-delay: 0.2s;
     }
 
     .hero-float--star {
@@ -459,7 +488,12 @@
       height: 42px;
       background: var(--c-white);
       box-shadow: 0 6px 20px rgba(90,113,153,0.18);
-      animation-delay: 3.6s;
+      animation-duration: 4.9s;
+      animation-delay: 0.65s;
+    }
+
+    .hero .btn--primary {
+      animation: hero-cta-glow 3.2s ease-in-out infinite;
     }
 
     /* ========================================
@@ -539,6 +573,7 @@
       background: radial-gradient(circle, rgba(15,126,160,0.12) 0%, transparent 65%);
       border-radius: 50%;
       pointer-events: none;
+      animation: section-glow-shift 12s ease-in-out infinite;
     }
 
     .about__inner {
@@ -666,6 +701,12 @@
       font-size: 0.7rem;
       letter-spacing: 0.03em;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.35s var(--ease-spring), box-shadow 0.35s ease;
+    }
+
+    .sns-icon:hover {
+      transform: translateY(-6px) scale(1.06);
+      box-shadow: 0 14px 32px rgba(28,43,74,0.18);
     }
 
     .sns-icon--ig {
@@ -732,9 +773,11 @@
        Mid CTA — C-01 Inline CTA Band
        ======================================== */
     .mid-cta {
-      background: linear-gradient(135deg, var(--c-navy) 0%, #243a5c 100%);
+      background: linear-gradient(120deg, var(--c-navy) 0%, #2a4570 40%, #1e3558 100%);
+      background-size: 220% 220%;
       padding: clamp(2.5rem, 5vw, 3.5rem) 0;
       text-align: center;
+      animation: mid-cta-flow 11s ease infinite;
     }
 
     .mid-cta__text {
@@ -1007,6 +1050,7 @@
       background: radial-gradient(circle, rgba(58,109,176,0.1) 0%, transparent 60%);
       border-radius: 50%;
       pointer-events: none;
+      animation: section-glow-shift 14s ease-in-out infinite reverse;
     }
 
     .closing__inner {
@@ -1129,25 +1173,100 @@
        ======================================== */
     .reveal {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      transform: translate3d(0, 36px, 0) scale(0.985);
+      transition:
+        opacity var(--t-reveal) var(--ease-out-expo),
+        transform var(--t-reveal) var(--ease-out-expo);
+      will-change: opacity, transform;
     }
 
     .reveal.is-visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0) scale(1);
+      will-change: auto;
     }
 
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-1 { transition-delay: 0.12s; }
+    .reveal-delay-2 { transition-delay: 0.24s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
 
     /* ========================================
        Animations
        ======================================== */
-    @keyframes float-gentle {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    @keyframes header-drop {
+      from { transform: translate3d(0, -100%, 0); opacity: 0.92; }
+      to { transform: translate3d(0, 0, 0); opacity: 1; }
+    }
+
+    @keyframes hero-orb-drift {
+      0%, 100% { transform: scale(1) translate(0, 0); opacity: 1; }
+      40% { transform: scale(1.06) translate(-2%, 3%); opacity: 0.92; }
+      70% { transform: scale(0.98) translate(3%, -2%); opacity: 1; }
+    }
+
+    @keyframes hero-glow-pulse {
+      0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.85; transform: translate(-50%, -50%) scale(1.08); }
+    }
+
+    @keyframes hero-rise {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    @keyframes hero-visual-in {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 44px, 0) scale(0.92) rotate(-2deg);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes hero-phone-sway {
+      0%, 100% { transform: rotate(-1.4deg) translateY(0); }
+      50% { transform: rotate(1.4deg) translateY(-7px); }
+    }
+
+    @keyframes hero-float-drift {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      35% { transform: translate3d(3px, -14px, 0) rotate(5deg); }
+      70% { transform: translate3d(-2px, -6px, 0) rotate(-3deg); }
+    }
+
+    @keyframes hero-float-drift-sm {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(0.85); }
+      35% { transform: translate3d(2px, -11px, 0) rotate(4deg) scale(0.85); }
+      70% { transform: translate3d(-2px, -5px, 0) rotate(-2deg) scale(0.85); }
+    }
+
+    @keyframes hero-cta-glow {
+      0%, 100% {
+        box-shadow: 0 4px 16px rgba(58,109,176,0.22);
+      }
+      50% {
+        box-shadow:
+          0 8px 32px rgba(58,109,176,0.38),
+          0 0 0 1px rgba(58,109,176,0.12);
+      }
+    }
+
+    @keyframes mid-cta-flow {
+      0%, 100% { background-position: 0% 40%; }
+      50% { background-position: 100% 60%; }
+    }
+
+    @keyframes section-glow-shift {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.12) translate(4%, -3%); opacity: 0.85; }
     }
 
     /* ========================================
@@ -1155,11 +1274,31 @@
        ======================================== */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .hero-float { animation: none; }
+      .header { animation: none; }
+      .hero::before { animation: none; }
+      .hero-glow { animation: none; }
+      .hero-enter,
+      .hero-enter--1,
+      .hero-enter--2,
+      .hero-enter--3,
+      .hero-enter--4,
+      .hero-enter--5,
+      .hero-enter--viz {
+        animation: none !important;
+        opacity: 1 !important;
+      }
+      .hero-phone { animation: none; }
+      .hero .btn--primary { animation: none; }
+      .hero-float { animation: none !important; }
+      .mid-cta { animation: none; background-size: auto; }
+      .about::before,
+      .closing::before { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; will-change: auto; }
       .faq__answer { transition: none; }
       .faq__question::after { transition: none; }
       .btn { transition: none; }
+      .sns-icon { transition: none; }
+      .sns-icon:hover { transform: none; }
     }
 
     /* ========================================
@@ -1225,7 +1364,7 @@
       }
 
       .hero-float {
-        transform: scale(0.85);
+        animation-name: hero-float-drift-sm;
       }
 
       .hero__cta-group {
@@ -1313,20 +1452,20 @@
     <section id="hero" class="hero">
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="hero__label">成果報酬型アフィリエイト</p>
-          <h1 class="hero__title">SNSを使うなら、<br>その発信、<br class="br-sp"><em>収益化</em>しませんか？</h1>
-          <p class="hero__sub">JASSNETは、SNSやWebサイトを活用して始められる<br class="br-sp">成果報酬型のアフィリエイトサービスです。<br class="br-pc">登録は無料、最短3分でスタートできます。</p>
-          <div class="hero__cta-group">
+          <p class="hero__label hero-enter hero-enter--1">成果報酬型アフィリエイト</p>
+          <h1 class="hero__title hero-enter hero-enter--2">SNSを使うなら、<br>その発信、<br class="br-sp"><em>収益化</em>しませんか？</h1>
+          <p class="hero__sub hero-enter hero-enter--3">JASSNETは、SNSやWebサイトを活用して始められる<br class="br-sp">成果報酬型のアフィリエイトサービスです。<br class="br-pc">登録は無料、最短3分でスタートできます。</p>
+          <div class="hero__cta-group hero-enter hero-enter--4">
             <a href="#" class="btn btn--primary">公式LINEで気軽に相談する</a>
             <a href="#" class="btn btn--secondary">無料でアフィリエイター登録する</a>
           </div>
-          <ul class="hero__badges">
+          <ul class="hero__badges hero-enter hero-enter--5">
             <li>登録・利用料無料</li>
             <li>SNSアカウントでもOK</li>
             <li>最短3分</li>
           </ul>
         </div>
-        <div class="hero__visual" aria-hidden="true">
+        <div class="hero__visual hero-enter hero-enter--viz" aria-hidden="true">
           <div class="hero-glow"></div>
           <div class="hero-phone">
             <div class="hero-phone__notch"></div>
