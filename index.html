@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JASSNET | SNSで始めるアフィリエイト</title>
+  <meta name="description" content="JASSNETは、SNSやWebサイトを活用して始められる成果報酬型のアフィリエイトサービスです。登録無料、最短3分でスタート。">
+  <meta name="theme-color" content="#1C2B4A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       Variables
+       ======================================== */
+    :root {
+      --c-navy: #1C2B4A;
+      --c-navy-90: rgba(28,43,74,0.92);
+      /* メインアクセント：紺に調和するスチールブルー（寒色系・やわらかすぎない彩度） */
+      --c-coral: #3A6DB0;
+      --c-coral-dark: #2D5890;
+      /* サブ：クールなティール（緑寄りすぎない青緑） */
+      --c-sage: #0F7EA0;
+      --c-sage-light: #5CBFE0;
+      --c-sage-faint: rgba(15,126,160,0.11);
+      /* 旧ゴールド枠：寒色のスレートブルー */
+      --c-gold: #5A7199;
+      --c-cream: #F3F6FA;
+      --c-warm: #E9EEF5;
+      --c-warm-dark: #D6DFEA;
+      --c-text: #1E293B;
+      --c-text-mid: #475569;
+      --c-text-light: #94A3B8;
+      --c-border: rgba(15, 23, 42, 0.07);
+      --c-white: #FFFFFF;
+
+      --f-display: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      --f-body: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      --f-number: 'Outfit', sans-serif;
+
+      --s-section: clamp(4.5rem, 9vw, 7.5rem);
+      --s-block: clamp(2rem, 4vw, 3.5rem);
+      --s-element: clamp(1rem, 2vw, 1.5rem);
+
+      --container: 1100px;
+      --container-narrow: 720px;
+      --container-pad: clamp(1.25rem, 4vw, 2rem);
+      --header-h: 60px;
+
+      --r-sm: 0.375rem;
+      --r-md: 0.5rem;
+      --r-lg: 0.625rem;
+      --r-xl: 0.875rem;
+    }
+
+    /* ========================================
+       Reset & Base
+       ======================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--f-body);
+      font-weight: 400;
+      font-size: clamp(0.925rem, 1.4vw, 1.05rem);
+      line-height: 1.75;
+      color: var(--c-text);
+      background: var(--c-cream);
+      padding-top: var(--header-h);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      word-break: auto-phrase;
+      overflow-wrap: anywhere;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    em { font-style: normal; }
+    .br-sp { display: none; }
+    .br-pc { display: inline; }
+
+    /* ========================================
+       Layout
+       ======================================== */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding-left: var(--container-pad);
+      padding-right: var(--container-pad);
+    }
+
+    .container--narrow {
+      max-width: var(--container-narrow);
+    }
+
+    /* ========================================
+       Header
+       ======================================== */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(243,246,250,0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+      display: flex;
+      align-items: center;
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .header__logo {
+      font-family: var(--f-number);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--c-navy);
+      letter-spacing: 0.06em;
+    }
+
+    /* ========================================
+       Buttons
+       ======================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--f-body);
+      font-weight: 700;
+      border-radius: var(--r-md);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--c-sage);
+      outline-offset: 2px;
+    }
+
+    .btn--primary {
+      background: var(--c-coral);
+      color: var(--c-white);
+      font-size: clamp(0.9rem, 1.3vw, 1rem);
+      padding: 0.95rem 2rem;
+      box-shadow: 0 4px 16px rgba(58,109,176,0.22);
+    }
+
+    .btn--primary:hover {
+      background: var(--c-coral-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(58,109,176,0.28);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      color: var(--c-navy);
+      font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+      padding: 0.85rem 1.75rem;
+      border: 2px solid var(--c-navy);
+    }
+
+    .btn--secondary:hover {
+      background: var(--c-navy);
+      color: var(--c-white);
+    }
+
+    .btn--small {
+      font-size: 0.8rem;
+      padding: 0.55rem 1.2rem;
+    }
+
+    .btn--on-dark {
+      background: var(--c-coral);
+      color: var(--c-white);
+    }
+
+    .btn--outline-light {
+      background: transparent;
+      color: rgba(255,255,255,0.9);
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+
+    .btn--outline-light:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    /* ========================================
+       Hero  — H-02 Offset Split
+       ======================================== */
+    .hero {
+      position: relative;
+      padding: clamp(3rem, 8vw, 6rem) 0 var(--s-section);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -8%;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, var(--c-sage-faint) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+
+    .hero__label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--c-sage);
+      letter-spacing: 0.08em;
+      border: 1.5px solid var(--c-sage);
+      border-radius: var(--r-sm);
+      padding: 0.3rem 0.85rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero__title {
+      font-family: var(--f-display);
+      font-size: clamp(1.75rem, 4.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--c-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero__title em {
+      color: var(--c-coral);
+      position: relative;
+    }
+
+    .hero__title em::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -2px;
+      right: -2px;
+      height: 8px;
+      background: var(--c-coral);
+      opacity: 0.2;
+      border-radius: 2px;
+      z-index: -1;
+    }
+
+    .hero__sub {
+      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+      color: var(--c-text-mid);
+      line-height: 1.85;
+      max-width: 520px;
+      margin-bottom: 2rem;
+    }
+
+    .hero__cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+    }
+
+    .hero__badges li {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--c-text-light);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .hero__badges li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--c-sage);
+      flex-shrink: 0;
+    }
+
+    /* Hero Visual */
+    .hero__visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 380px;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(15,126,160,0.14) 0%, rgba(58,109,176,0.06) 50%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .hero-phone {
+      position: relative;
+      width: 200px;
+      height: 360px;
+      background: var(--c-navy);
+      border-radius: 1.25rem;
+      padding: 10px;
+      box-shadow: 0 30px 70px rgba(28,43,74,0.22), 0 8px 20px rgba(28,43,74,0.1);
+      z-index: 1;
+    }
+
+    .hero-phone__notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 54px;
+      height: 18px;
+      background: var(--c-navy);
+      border-radius: 0 0 10px 10px;
+      z-index: 2;
+    }
+
+    .hero-phone__screen {
+      background: var(--c-white);
+      border-radius: 0.875rem;
+      height: 100%;
+      padding: 2.25rem 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow: hidden;
+    }
+
+    .hero-phone__post {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .hero-phone__avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero-phone__text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 5px;
+      flex: 1;
+    }
+
+    .hero-phone__line {
+      height: 7px;
+      background: var(--c-warm);
+      border-radius: 4px;
+    }
+
+    .hero-phone__img {
+      width: 100%;
+      height: 72px;
+      border-radius: var(--r-md);
+      flex-shrink: 0;
+    }
+
+    .hero-phone__actions {
+      display: flex;
+      gap: 8px;
+      padding: 2px 0;
+    }
+
+    .hero-phone__action-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--c-warm-dark);
+    }
+
+    /* Floating badges */
+    .hero-float {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      z-index: 2;
+      animation: float-gentle 5s ease-in-out infinite;
+    }
+
+    .hero-float--heart {
+      top: 12%;
+      right: 2%;
+      width: 46px;
+      height: 46px;
+      background: var(--c-white);
+      box-shadow: 0 6px 20px rgba(58,109,176,0.2);
+      animation-delay: 0s;
+    }
+
+    .hero-float--yen {
+      bottom: 18%;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      background: var(--c-gold);
+      color: var(--c-white);
+      font-family: var(--f-number);
+      font-size: 1.3rem;
+      box-shadow: 0 6px 20px rgba(90,113,153,0.28);
+      animation-delay: 1.2s;
+    }
+
+    .hero-float--arrow {
+      top: 4%;
+      left: 8%;
+      width: 42px;
+      height: 42px;
+      background: var(--c-white);
+      box-shadow: 0 6px 20px rgba(15,126,160,0.2);
+      animation-delay: 2.4s;
+    }
+
+    .hero-float--star {
+      bottom: 8%;
+      left: 4%;
+      width: 42px;
+      height: 42px;
+      background: var(--c-white);
+      box-shadow: 0 6px 20px rgba(90,113,153,0.18);
+      animation-delay: 3.6s;
+    }
+
+    /* ========================================
+       Problems — Empathy Section
+       ======================================== */
+    .problems {
+      background: var(--c-warm);
+      padding: var(--s-section) 0;
+    }
+
+    .problems__inner {
+      max-width: 680px;
+    }
+
+    .problems__title {
+      font-family: var(--f-display);
+      font-size: clamp(1.4rem, 3.2vw, 2rem);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--c-text);
+      margin-bottom: var(--s-block);
+    }
+
+    .problems__list li {
+      position: relative;
+      padding: 0.8rem 0 0.8rem 1.75rem;
+      color: var(--c-text-mid);
+      line-height: 1.75;
+    }
+
+    .problems__list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 1.25rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--c-coral);
+      opacity: 0.6;
+    }
+
+    .problems__list li + li {
+      border-top: 1px solid var(--c-border);
+    }
+
+    .problems__bridge {
+      margin-top: var(--s-block);
+      padding-top: var(--s-element);
+      font-weight: 700;
+      color: var(--c-text);
+      line-height: 1.8;
+    }
+
+    .problems__bridge em {
+      color: var(--c-coral);
+    }
+
+    /* ========================================
+       About — S-01 Manifesto Break
+       ======================================== */
+    .about {
+      background: var(--c-navy);
+      color: rgba(255,255,255,0.88);
+      padding: var(--s-section) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about::before {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(15,126,160,0.12) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .about__inner {
+      max-width: 680px;
+      position: relative;
+    }
+
+    .about__overtitle {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--c-sage-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+
+    .about__heading {
+      font-family: var(--f-display);
+      font-size: clamp(1.35rem, 3vw, 1.85rem);
+      font-weight: 700;
+      line-height: 1.5;
+      color: var(--c-white);
+      margin-bottom: var(--s-block);
+    }
+
+    .about__body {
+      color: rgba(255,255,255,0.72);
+      line-height: 2;
+      margin-bottom: var(--s-element);
+    }
+
+    .about__body + .about__body {
+      margin-top: 0;
+    }
+
+    .about__statement {
+      font-family: var(--f-display);
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      font-weight: 700;
+      color: var(--c-white);
+      line-height: 1.65;
+      margin-top: var(--s-block);
+      padding-left: 1.25rem;
+      border-left: 3px solid var(--c-sage);
+    }
+
+    /* ========================================
+       Reasons — N-03 Asymmetric Feature Slabs
+       ======================================== */
+    .reasons {
+      padding: var(--s-section) 0 0;
+    }
+
+    .reasons__title {
+      font-family: var(--f-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: var(--c-text);
+      margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .reasons__title em {
+      color: var(--c-coral);
+    }
+
+    /* Individual reason slabs */
+    .reason {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .reason--even {
+      background: var(--c-warm);
+    }
+
+    .reason__num {
+      font-family: var(--f-number);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      line-height: 1;
+      color: var(--c-sage-light);
+      opacity: 0.6;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .reason__heading {
+      font-family: var(--f-body);
+      font-weight: 700;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      line-height: 1.45;
+      color: var(--c-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .reason__desc {
+      color: var(--c-text-mid);
+      line-height: 1.85;
+      max-width: 560px;
+    }
+
+    /* Reason 1: 8:4 grid with visual */
+    .reason--1 .reason__grid {
+      display: grid;
+      grid-template-columns: 8fr 4fr;
+      gap: clamp(2rem, 4vw, 3rem);
+      align-items: center;
+    }
+
+    .reason__sns-visual {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .sns-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-white);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.03em;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .sns-icon--ig {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    }
+
+    .sns-icon--x {
+      background: #14171A;
+    }
+
+    .sns-icon--tt {
+      background: linear-gradient(135deg, #25F4EE, #FE2C55);
+    }
+
+    /* Reason 3: metric layout */
+    .reason--3 .reason__grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(1.5rem, 4vw, 3rem);
+      align-items: center;
+    }
+
+    .reason__metric {
+      font-family: var(--f-number);
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      gap: 0.1em;
+      user-select: none;
+    }
+
+    .reason__metric-currency {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      color: var(--c-sage);
+    }
+
+    .reason__metric-value {
+      font-size: clamp(4rem, 10vw, 6.5rem);
+      color: var(--c-navy);
+    }
+
+    /* Reason 4: with mini bar chart */
+    .reason--4 .reason__layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: clamp(2rem, 4vw, 3rem);
+      align-items: center;
+    }
+
+    .reason__chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      height: 80px;
+    }
+
+    .reason__bar {
+      width: 18px;
+      border-radius: 4px 4px 0 0;
+      transition: height 0.6s ease;
+    }
+
+    /* ========================================
+       Mid CTA — C-01 Inline CTA Band
+       ======================================== */
+    .mid-cta {
+      background: linear-gradient(135deg, var(--c-navy) 0%, #243a5c 100%);
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0;
+      text-align: center;
+    }
+
+    .mid-cta__text {
+      font-family: var(--f-display);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ========================================
+       Audience — Checklist
+       ======================================== */
+    .audience {
+      padding: var(--s-section) 0;
+    }
+
+    .audience__title {
+      font-family: var(--f-display);
+      font-size: clamp(1.4rem, 3.2vw, 2rem);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--c-text);
+      margin-bottom: var(--s-block);
+    }
+
+    .audience__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+      margin-bottom: var(--s-block);
+    }
+
+    .audience__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem 0;
+    }
+
+    .audience__check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      margin-top: 2px;
+      color: var(--c-sage);
+    }
+
+    .audience__item span {
+      color: var(--c-text-mid);
+      line-height: 1.7;
+    }
+
+    .audience__bridge {
+      color: var(--c-text);
+      font-weight: 500;
+    }
+
+    /* ========================================
+       Steps — N-04 Timeline Spine
+       ======================================== */
+    .steps {
+      background: var(--c-warm);
+      padding: var(--s-section) 0;
+    }
+
+    .steps__title {
+      font-family: var(--f-display);
+      font-size: clamp(1.4rem, 3.2vw, 2rem);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--c-text);
+      margin-bottom: var(--s-block);
+    }
+
+    .steps__timeline {
+      position: relative;
+      max-width: 600px;
+    }
+
+    .steps__timeline::before {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--c-sage-light);
+    }
+
+    .step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 1.25rem;
+      padding-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .step:last-child {
+      padding-bottom: 0;
+    }
+
+    .step:last-child .steps__timeline::before {
+      display: none;
+    }
+
+    .step__marker {
+      position: relative;
+      z-index: 1;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--c-sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(15,126,160,0.24);
+    }
+
+    .step__marker-num {
+      font-family: var(--f-number);
+      font-size: 1.2rem;
+      color: var(--c-white);
+    }
+
+    .step__content {
+      padding-top: 0.5rem;
+    }
+
+    .step__label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--c-sage);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.25rem;
+    }
+
+    .step__heading {
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: var(--c-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .step__desc {
+      color: var(--c-text-mid);
+      line-height: 1.8;
+    }
+
+    .steps__note {
+      margin-top: var(--s-block);
+      padding-left: calc(48px + 1.25rem);
+      font-size: 0.82rem;
+      color: var(--c-text-light);
+    }
+
+    /* ========================================
+       FAQ — S-04 Accordion
+       ======================================== */
+    .faq {
+      padding: var(--s-section) 0;
+    }
+
+    .faq__title {
+      font-family: var(--f-display);
+      font-size: clamp(1.4rem, 3.2vw, 2rem);
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--c-text);
+      margin-bottom: var(--s-block);
+    }
+
+    .faq__list {
+      max-width: 720px;
+    }
+
+    .faq__item {
+      border-bottom: 1px solid var(--c-border);
+    }
+
+    .faq__item:first-child {
+      border-top: 1px solid var(--c-border);
+    }
+
+    .faq__question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--f-body);
+      font-size: clamp(0.9rem, 1.4vw, 1rem);
+      font-weight: 700;
+      color: var(--c-text);
+      text-align: left;
+      padding: 1.25rem 2.5rem 1.25rem 0;
+      position: relative;
+      line-height: 1.6;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .faq__question:focus-visible {
+      outline: 3px solid var(--c-sage);
+      outline-offset: -2px;
+    }
+
+    .faq__q-label {
+      color: var(--c-coral);
+      font-family: var(--f-number);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .faq__question::after {
+      content: '';
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid var(--c-text-light);
+      border-bottom: 2px solid var(--c-text-light);
+      transform: translateY(-65%) rotate(45deg);
+      transition: transform 0.3s ease;
+    }
+
+    .faq__question[aria-expanded="true"]::after {
+      transform: translateY(-35%) rotate(-135deg);
+    }
+
+    .faq__answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq__answer-inner {
+      padding: 0 0 1.25rem 2.5rem;
+      color: var(--c-text-mid);
+      line-height: 1.85;
+    }
+
+    .faq__a-label {
+      color: var(--c-sage);
+      font-weight: 700;
+      margin-right: 0.25rem;
+    }
+
+    /* ========================================
+       Closing — C-05 Closing Recap + CTA
+       ======================================== */
+    .closing {
+      background: var(--c-navy);
+      color: var(--c-white);
+      padding: var(--s-section) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(58,109,176,0.1) 0%, transparent 60%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .closing__inner {
+      position: relative;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .closing__title {
+      font-family: var(--f-display);
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .closing__body {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .closing__highlights {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .closing__highlight {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .closing__highlight-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--c-sage-light);
+      flex-shrink: 0;
+    }
+
+    .closing__cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .closing__badges {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .closing__badges li {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ========================================
+       Footer
+       ======================================== */
+    .footer {
+      background: #151F33;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer__logo {
+      font-family: var(--f-number);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer__copy {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ========================================
+       Mobile CTA Bar — C-02 Sticky
+       ======================================== */
+    .mobile-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      background: rgba(243,246,250,0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--c-border);
+      padding: 0.65rem var(--container-pad);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-cta-bar.is-visible {
+      transform: translateY(0);
+    }
+
+    .mobile-cta-bar .btn {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 0.8rem;
+    }
+
+    /* ========================================
+       Scroll Reveal
+       ======================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ========================================
+       Animations
+       ======================================== */
+    @keyframes float-gentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* ========================================
+       Reduced Motion
+       ======================================== */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-float { animation: none; }
+      .faq__answer { transition: none; }
+      .faq__question::after { transition: none; }
+      .btn { transition: none; }
+    }
+
+    /* ========================================
+       Responsive — Tablet
+       ======================================== */
+    @media (max-width: 1023px) {
+      .hero__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero__visual {
+        min-height: 320px;
+        order: -1;
+      }
+
+      .reason--1 .reason__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .reason__sns-visual {
+        justify-content: flex-start;
+      }
+
+      .reason--3 .reason__grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .reason--4 .reason__layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .reason__chart {
+        justify-content: flex-start;
+      }
+    }
+
+    /* ========================================
+       Responsive — Mobile
+       ======================================== */
+    @media (max-width: 767px) {
+      :root {
+        --header-h: 52px;
+      }
+
+      .br-sp { display: inline; }
+      .br-pc { display: none; }
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .hero__visual {
+        min-height: 280px;
+      }
+
+      .hero-phone {
+        width: 170px;
+        height: 300px;
+      }
+
+      .hero-float {
+        transform: scale(0.85);
+      }
+
+      .hero__cta-group {
+        flex-direction: column;
+      }
+
+      .hero__cta-group .btn {
+        width: 100%;
+      }
+
+      .audience__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .closing__cta-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .closing__cta-group .btn {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .mobile-cta-bar {
+        display: block;
+      }
+
+      .steps__note {
+        padding-left: calc(48px + 1.25rem);
+      }
+
+      body {
+        padding-bottom: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-phone {
+        width: 150px;
+        height: 260px;
+      }
+
+      .hero__visual {
+        min-height: 240px;
+      }
+
+      .hero-float--heart,
+      .hero-float--star {
+        display: none;
+      }
+
+      .sns-icon {
+        width: 52px;
+        height: 52px;
+      }
+
+      .closing__highlights {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+    }
+
+    /* ========================================
+       Utility: scroll-margin for anchors
+       ======================================== */
+    section[id] {
+      scroll-margin-top: calc(var(--header-h) + 1rem);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ======== Header ======== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo" aria-label="JASSNET">JASSNET</a>
+      <a href="#" class="btn btn--primary btn--small">LINEで相談する</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======== Hero — H-02 Offset Split ======== -->
+    <section id="hero" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="hero__label">成果報酬型アフィリエイト</p>
+          <h1 class="hero__title">SNSを使うなら、<br>その発信、<br class="br-sp"><em>収益化</em>しませんか？</h1>
+          <p class="hero__sub">JASSNETは、SNSやWebサイトを活用して始められる<br class="br-sp">成果報酬型のアフィリエイトサービスです。<br class="br-pc">登録は無料、最短3分でスタートできます。</p>
+          <div class="hero__cta-group">
+            <a href="#" class="btn btn--primary">公式LINEで気軽に相談する</a>
+            <a href="#" class="btn btn--secondary">無料でアフィリエイター登録する</a>
+          </div>
+          <ul class="hero__badges">
+            <li>登録・利用料無料</li>
+            <li>SNSアカウントでもOK</li>
+            <li>最短3分</li>
+          </ul>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero-glow"></div>
+          <div class="hero-phone">
+            <div class="hero-phone__notch"></div>
+            <div class="hero-phone__screen">
+              <div class="hero-phone__post">
+                <div class="hero-phone__avatar" style="background:linear-gradient(135deg,#f09433,#dc2743)"></div>
+                <div class="hero-phone__text">
+                  <div class="hero-phone__line" style="width:82%"></div>
+                  <div class="hero-phone__line" style="width:55%"></div>
+                </div>
+              </div>
+              <div class="hero-phone__img" style="background:linear-gradient(135deg,var(--c-sage-light),var(--c-sage))"></div>
+              <div class="hero-phone__actions">
+                <div class="hero-phone__action-dot"></div>
+                <div class="hero-phone__action-dot"></div>
+                <div class="hero-phone__action-dot"></div>
+              </div>
+              <div class="hero-phone__post">
+                <div class="hero-phone__avatar" style="background:#14171A"></div>
+                <div class="hero-phone__text">
+                  <div class="hero-phone__line" style="width:90%"></div>
+                  <div class="hero-phone__line" style="width:60%"></div>
+                </div>
+              </div>
+              <div class="hero-phone__post">
+                <div class="hero-phone__avatar" style="background:linear-gradient(135deg,#25F4EE,#FE2C55)"></div>
+                <div class="hero-phone__text">
+                  <div class="hero-phone__line" style="width:72%"></div>
+                  <div class="hero-phone__line" style="width:48%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-float hero-float--heart">
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true"><path d="M10 17.5l-1.45-1.32C3.4 11.36 0 8.28 0 4.5 0 1.42 2.42 0 5 0c1.74 0 3.41.81 5 2.28C11.59.81 13.26 0 15 0c2.58 0 5 1.42 5 4.5 0 3.78-3.4 6.86-8.55 11.68L10 17.5z" fill="#E2694D"/></svg>
+          </div>
+          <div class="hero-float hero-float--yen">&yen;</div>
+          <div class="hero-float hero-float--arrow">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 15L15 3M15 3H7M15 3v8" stroke="#6EAE9A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="hero-float hero-float--star">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 0l2.35 5.18L16 5.82l-4 3.64L13.18 16 8 12.9 2.82 16 4 9.46 0 5.82l5.65-.64L8 0z" fill="#D4A853"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== Problems — Empathy ======== -->
+    <section id="problems" class="problems">
+      <div class="container problems__inner reveal">
+        <h2 class="problems__title">こんな悩み、ありませんか？</h2>
+        <ul class="problems__list">
+          <li>アフィリエイトに興味はあるけれど、何から手をつければいいのかわからない</li>
+          <li>ブログをイチから立ち上げるのはハードルが高い。でもSNSならできそうな気がする</li>
+          <li>案件がたくさんありすぎて、自分に合ったものの選び方がわからない</li>
+          <li>ひとりで進めるのは不安。困ったときに相談できる場所がほしい</li>
+          <li>副業として始めてみたいけど、初期費用やリスクが気になる</li>
+        </ul>
+        <p class="problems__bridge">こうした"最初のつまずき"を<br class="br-sp">できる限り減らし、<br><em>とにかく始めやすいこと</em>に<br class="br-sp">徹底的にこだわって設計されたのが、<br class="br-sp">JASSNETです。</p>
+      </div>
+    </section>
+
+    <!-- ======== About — S-01 Manifesto Break ======== -->
+    <section id="about" class="about">
+      <div class="container about__inner reveal">
+        <p class="about__overtitle">ABOUT JASSNET</p>
+        <h2 class="about__heading">JASSNETは、<br class="br-sp">初心者でも始めやすい<br>アフィリエイトサービスです</h2>
+        <p class="about__body">JASSNETは、SNSやWebサイトを使って<br class="br-sp">商品・サービスを紹介し、<br class="br-sp">成果に応じて報酬が受け取れる<br class="br-sp">成果報酬型のアフィリエイトサービスです。</p>
+        <p class="about__body">いきなり専門的な知識やスキルを求められることはありません。<br class="br-pc">難しいサイト構築も、高額な初期投資も必要ありません。<br class="br-pc">まずは、あなたが普段使っている<br class="br-sp">InstagramやX（旧Twitter）、TikTokなどの<br class="br-sp">SNSアカウントからスタートできます。</p>
+        <p class="about__statement">「自分にもできるかもしれない」——<br>そう思えることが、<br class="br-sp">何よりも大切な最初の一歩です。</p>
+      </div>
+    </section>
+
+    <!-- ======== Reasons — N-03 Asymmetric Feature Slabs ======== -->
+    <section id="reasons" class="reasons">
+      <div class="container">
+        <h2 class="reasons__title reveal">JASSNETが始めやすい、<em>4つの理由</em></h2>
+      </div>
+
+      <!-- Reason 1: 8:4 grid — primary differentiator -->
+      <div class="reason reason--1">
+        <div class="container">
+          <div class="reason__grid reveal">
+            <div>
+              <span class="reason__num">01</span>
+              <h3 class="reason__heading">SNSですぐに始められる</h3>
+              <p class="reason__desc">Instagram、X、TikTokなど、<br class="br-sp">すでにお使いのSNSアカウントを<br class="br-sp">そのまま活用できます。<br class="br-pc">新たにブログやWebサイトを<br class="br-sp">立ち上げる必要はありません。<br class="br-pc">普段の発信スタイルを活かしながら、<br class="br-sp">無理なくアフィリエイトを始められる環境が整っています。</p>
+            </div>
+            <div class="reason__sns-visual" aria-hidden="true">
+              <div class="sns-icon sns-icon--ig">Insta</div>
+              <div class="sns-icon sns-icon--x">X</div>
+              <div class="sns-icon sns-icon--tt">TikTok</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 2: full-width text — warm bg -->
+      <div class="reason reason--2 reason--even">
+        <div class="container reveal">
+          <span class="reason__num">02</span>
+          <h3 class="reason__heading">初心者向けのサポート体制が充実</h3>
+          <p class="reason__desc">公式LINEでの個別相談や、<br class="br-sp">学習コンテンツへの導線など、<br class="br-sp">初めての方でも迷わず進められるサポートが用意されています。<br class="br-pc">「何をすればいいかわからない」という状態から、<br class="br-sp">一歩ずつ前に進んでいける仕組みです。<br class="br-pc">わからないことがあっても、<br class="br-sp">ひとりで悩む必要はありません。</p>
+        </div>
+      </div>
+
+      <!-- Reason 3: metric statement — ¥0 as visual -->
+      <div class="reason reason--3">
+        <div class="container">
+          <div class="reason__grid reveal">
+            <div class="reason__metric" aria-hidden="true">
+              <span class="reason__metric-currency">&yen;</span><span class="reason__metric-value">0</span>
+            </div>
+            <div>
+              <span class="reason__num">03</span>
+              <h3 class="reason__heading">成果報酬型だからリスクが少ない</h3>
+              <p class="reason__desc">在庫を持つ必要も、仕入れの費用もかかりません。<br class="br-pc">あなたが紹介した商品やサービスから<br class="br-sp">成果が発生した分だけ、<br class="br-sp">報酬につながるシンプルな仕組みです。<br class="br-pc">初期費用ゼロ、登録料もゼロ。<br class="br-pc">金銭的なリスクを最小限に抑えた状態で<br class="br-sp">チャレンジできます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reason 4: text + mini chart — warm bg -->
+      <div class="reason reason--4 reason--even">
+        <div class="container">
+          <div class="reason__layout reveal">
+            <div>
+              <span class="reason__num">04</span>
+              <h3 class="reason__heading">報酬状況がひと目でわかる</h3>
+              <p class="reason__desc">管理画面から、発生した成果や報酬額を<br class="br-sp">いつでも確認できます。<br class="br-pc">最低支払額や振込スケジュールも<br class="br-sp">明確に提示されているため、<br class="br-sp">「いくら稼げているのか」<br class="br-sp">「いつ振り込まれるのか」が<br class="br-sp">見える化されていて安心です。</p>
+            </div>
+            <div class="reason__chart" aria-hidden="true">
+              <div class="reason__bar" style="height:30%;background:var(--c-sage-light)"></div>
+              <div class="reason__bar" style="height:50%;background:var(--c-sage-light)"></div>
+              <div class="reason__bar" style="height:40%;background:var(--c-sage)"></div>
+              <div class="reason__bar" style="height:65%;background:var(--c-sage)"></div>
+              <div class="reason__bar" style="height:55%;background:var(--c-sage)"></div>
+              <div class="reason__bar" style="height:80%;background:var(--c-coral)"></div>
+              <div class="reason__bar" style="height:95%;background:var(--c-coral)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== Mid CTA — C-01 Inline CTA Band ======== -->
+    <section class="mid-cta">
+      <div class="container reveal">
+        <p class="mid-cta__text">始め方がわからなくても大丈夫。<br class="br-sp"><br class="br-pc">まずはLINEで気軽にご相談ください。</p>
+        <a href="#" class="btn btn--on-dark btn--primary">公式LINEで気軽に相談する</a>
+      </div>
+    </section>
+
+    <!-- ======== Audience — Checklist ======== -->
+    <section id="audience" class="audience">
+      <div class="container">
+        <h2 class="audience__title reveal">こんな方におすすめです</h2>
+        <ul class="audience__grid reveal">
+          <li class="audience__item">
+            <svg class="audience__check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="var(--c-sage-faint)"/><path d="M6.5 11.5l3 3 6-6" stroke="var(--c-sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>これからアフィリエイトに挑戦してみたいと考えている方</span>
+          </li>
+          <li class="audience__item">
+            <svg class="audience__check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="var(--c-sage-faint)"/><path d="M6.5 11.5l3 3 6-6" stroke="var(--c-sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Instagram・X・TikTokなど、SNSを日常的に使っている方</span>
+          </li>
+          <li class="audience__item">
+            <svg class="audience__check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="var(--c-sage-faint)"/><path d="M6.5 11.5l3 3 6-6" stroke="var(--c-sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>ブログ運営はハードルが高いと感じている方</span>
+          </li>
+          <li class="audience__item">
+            <svg class="audience__check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="var(--c-sage-faint)"/><path d="M6.5 11.5l3 3 6-6" stroke="var(--c-sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>なるべくシンプルに、手軽に始めたい方</span>
+          </li>
+          <li class="audience__item">
+            <svg class="audience__check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="var(--c-sage-faint)"/><path d="M6.5 11.5l3 3 6-6" stroke="var(--c-sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>わからないことがあったとき、気軽に相談できる環境がほしい方</span>
+          </li>
+          <li class="audience__item">
+            <svg class="audience__check" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="11" fill="var(--c-sage-faint)"/><path d="M6.5 11.5l3 3 6-6" stroke="var(--c-sage)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>副業や在宅ワークとして、スキマ時間を収益に変えたい方</span>
+          </li>
+        </ul>
+        <p class="audience__bridge reveal">ひとつでも当てはまるなら、JASSNETはあなたにとって相性の良いサービスかもしれません。</p>
+      </div>
+    </section>
+
+    <!-- ======== Steps — N-04 Timeline Spine ======== -->
+    <section id="steps" class="steps">
+      <div class="container">
+        <h2 class="steps__title reveal">登録はかんたん3ステップ</h2>
+        <div class="steps__timeline">
+          <div class="step reveal">
+            <div class="step__marker">
+              <span class="step__marker-num">1</span>
+            </div>
+            <div class="step__content">
+              <p class="step__label">STEP 1</p>
+              <h3 class="step__heading">基本情報を入力する</h3>
+              <p class="step__desc">お名前やメールアドレスなど、基本的な情報を入力するだけ。難しい操作は一切ありません。</p>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-1">
+            <div class="step__marker">
+              <span class="step__marker-num">2</span>
+            </div>
+            <div class="step__content">
+              <p class="step__label">STEP 2</p>
+              <h3 class="step__heading">振込先とメディア情報を登録する</h3>
+              <p class="step__desc">報酬の振込先となる口座情報と、発信に使うSNSやWebサイトの情報を登録します。</p>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-2">
+            <div class="step__marker">
+              <span class="step__marker-num">3</span>
+            </div>
+            <div class="step__content">
+              <p class="step__label">STEP 3</p>
+              <h3 class="step__heading">確認が完了したら、すぐにスタート</h3>
+              <p class="step__desc">所定の確認を経て、案件の閲覧や広告リンクの取得が可能になります。あとはあなたのペースで進めるだけです。</p>
+            </div>
+          </div>
+        </div>
+        <p class="steps__note reveal">※ 登録には所定の審査・確認があります。ご登録の際は、ご使用予定の媒体情報をお手元にご用意ください。</p>
+      </div>
+    </section>
+
+    <!-- ======== FAQ — S-04 Accordion ======== -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2 class="faq__title reveal">よくある質問</h2>
+        <div class="faq__list reveal">
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-1">
+              <span class="faq__q-label">Q.</span>
+              SNSだけでも始められますか？
+            </button>
+            <div class="faq__answer" id="faq-1" role="region">
+              <div class="faq__answer-inner">
+                <span class="faq__a-label">A.</span>はい、もちろんです。Instagram、X、TikTokなどのSNSアカウントだけでアフィリエイトを始めることができます。ブログやWebサイトは必須ではありません。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-2">
+              <span class="faq__q-label">Q.</span>
+              スマホだけでもできますか？
+            </button>
+            <div class="faq__answer" id="faq-2" role="region">
+              <div class="faq__answer-inner">
+                <span class="faq__a-label">A.</span>はい、できます。広告リンクの取得から投稿の作成、管理画面での成果確認まで、すべてスマホひとつで完結します。パソコンがなくても問題ありません。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-3">
+              <span class="faq__q-label">Q.</span>
+              どんな案件がありますか？
+            </button>
+            <div class="faq__answer" id="faq-3" role="region">
+              <div class="faq__answer-inner">
+                <span class="faq__a-label">A.</span>CPI案件（アプリインストール型）を中心に、SNSとの相性が良いジャンルの案件が多数用意されています。まずは登録後に管理画面から案件一覧をチェックしてみてください。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-4">
+              <span class="faq__q-label">Q.</span>
+              登録時に必要なものはありますか？
+            </button>
+            <div class="faq__answer" id="faq-4" role="region">
+              <div class="faq__answer-inner">
+                <span class="faq__a-label">A.</span>基本情報（お名前・メールアドレスなど）、報酬振込先の口座情報、そして使用するメディアのURLや概要の入力が必要です。事前に準備しておくとスムーズに進められます。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="faq-5">
+              <span class="faq__q-label">Q.</span>
+              費用はかかりますか？
+            </button>
+            <div class="faq__answer" id="faq-5" role="region">
+              <div class="faq__answer-inner">
+                <span class="faq__a-label">A.</span>登録料・利用料ともに一切かかりません。完全無料で始められます。
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== Closing — C-05 Closing Recap + CTA ======== -->
+    <section id="closing" class="closing">
+      <div class="container">
+        <div class="closing__inner reveal">
+          <h2 class="closing__title">あなたの「発信」が<br class="br-sp">「収入」に変わる<br>第一歩を、今日ここから。</h2>
+          <p class="closing__body">悩んでいる時間が長いほど、<br class="br-sp">チャンスは遠ざかっていきます。<br>まずはLINEで気軽にご相談ください。<br class="br-sp">あなたに合った始め方をご案内します。</p>
+          <div class="closing__highlights">
+            <span class="closing__highlight">
+              <svg class="closing__highlight-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 8.3l-5 5a1 1 0 01-1.4 0l-2-2a1 1 0 011.4-1.4l1.3 1.3 4.3-4.3a1 1 0 011.4 1.4z" fill="currentColor"/></svg>
+              SNSで手軽にスタート
+            </span>
+            <span class="closing__highlight">
+              <svg class="closing__highlight-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 8.3l-5 5a1 1 0 01-1.4 0l-2-2a1 1 0 011.4-1.4l1.3 1.3 4.3-4.3a1 1 0 011.4 1.4z" fill="currentColor"/></svg>
+              初心者サポート充実
+            </span>
+            <span class="closing__highlight">
+              <svg class="closing__highlight-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 0a10 10 0 1010 10A10 10 0 0010 0zm4.3 8.3l-5 5a1 1 0 01-1.4 0l-2-2a1 1 0 011.4-1.4l1.3 1.3 4.3-4.3a1 1 0 011.4 1.4z" fill="currentColor"/></svg>
+              登録完全無料
+            </span>
+          </div>
+          <div class="closing__cta-group">
+            <a href="#" class="btn btn--on-dark btn--primary">公式LINEで気軽に相談する</a>
+            <a href="#" class="btn btn--outline-light">無料でアフィリエイター登録する</a>
+          </div>
+          <ul class="closing__badges">
+            <li>登録・利用料無料</li>
+            <li>SNSでもOK</li>
+            <li>最短3分</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======== Footer ======== -->
+  <footer class="footer">
+    <p class="footer__logo">JASSNET</p>
+    <p class="footer__copy">&copy; 2025 JASSNET. All rights reserved.</p>
+  </footer>
+
+  <!-- ======== Mobile Sticky CTA Bar ======== -->
+  <div class="mobile-cta-bar" aria-hidden="true">
+    <a href="#" class="btn btn--primary">公式LINEで気軽に相談する</a>
+  </div>
+
+  <!-- ======== Scripts ======== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ----- FAQ Accordion ----- */
+      document.querySelectorAll('.faq__question').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          var answer = document.getElementById(this.getAttribute('aria-controls'));
+          if (!answer) return;
+
+          if (expanded) {
+            this.setAttribute('aria-expanded', 'false');
+            answer.style.maxHeight = '0';
+          } else {
+            this.setAttribute('aria-expanded', 'true');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
+        });
+      });
+
+      /* ----- Scroll Reveal ----- */
+      if ('IntersectionObserver' in window) {
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+
+      /* ----- Mobile CTA Bar Visibility ----- */
+      var hero = document.getElementById('hero');
+      var mobileCta = document.querySelector('.mobile-cta-bar');
+
+      if (hero && mobileCta && 'IntersectionObserver' in window) {
+        var heroObserver = new IntersectionObserver(function (entries) {
+          mobileCta.classList.toggle('is-visible', !entries[0].isIntersecting);
+        }, { threshold: 0 });
+        heroObserver.observe(hero);
+      }
+
+      /* ----- Smooth scroll for same-page links ----- */
+      document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var id = this.getAttribute('href');
+          if (id === '#') return;
+          var target = document.querySelector(id);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
