@@ -313,7 +313,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 380px;
+      min-height: 340px;
     }
 
     .hero-glow {
@@ -327,85 +327,27 @@
       border-radius: 50%;
     }
 
-    .hero-phone {
+    .hero-mascot {
       position: relative;
-      width: 200px;
-      height: 360px;
+      z-index: 1;
+      margin: 0;
+      width: min(100%, 300px);
+    }
+
+    .hero-mascot__frame {
       background: var(--c-navy);
       border-radius: 1.25rem;
-      padding: 10px;
+      padding: 1rem 0.85rem 1.15rem;
       box-shadow: 0 30px 70px rgba(28,43,74,0.22), 0 8px 20px rgba(28,43,74,0.1);
-      z-index: 1;
-    }
-
-    .hero-phone__notch {
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 54px;
-      height: 18px;
-      background: var(--c-navy);
-      border-radius: 0 0 10px 10px;
-      z-index: 2;
-    }
-
-    .hero-phone__screen {
-      background: var(--c-white);
-      border-radius: 0.875rem;
-      height: 100%;
-      padding: 2.25rem 12px 12px;
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      overflow: hidden;
+      align-items: center;
+      justify-content: center;
     }
 
-    .hero-phone__post {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-    }
-
-    .hero-phone__avatar {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .hero-phone__text {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding-top: 5px;
-      flex: 1;
-    }
-
-    .hero-phone__line {
-      height: 7px;
-      background: var(--c-warm);
-      border-radius: 4px;
-    }
-
-    .hero-phone__img {
+    .hero-mascot__img {
       width: 100%;
-      height: 72px;
-      border-radius: var(--r-md);
-      flex-shrink: 0;
-    }
-
-    .hero-phone__actions {
-      display: flex;
-      gap: 8px;
-      padding: 2px 0;
-    }
-
-    .hero-phone__action-dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      border: 2px solid var(--c-warm-dark);
+      height: auto;
+      display: block;
     }
 
     /* Floating badges */
@@ -1216,12 +1158,13 @@
       }
 
       .hero__visual {
-        min-height: 280px;
+        min-height: 260px;
       }
 
-      .hero-phone {
-        width: 170px;
-        height: 300px;
+      .hero-mascot {
+        width: min(100%, 280px);
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .hero-float {
@@ -1264,13 +1207,12 @@
     }
 
     @media (max-width: 480px) {
-      .hero-phone {
-        width: 150px;
-        height: 260px;
+      .hero-mascot {
+        width: min(100%, 260px);
       }
 
       .hero__visual {
-        min-height: 240px;
+        min-height: 220px;
       }
 
       .hero-float--heart,
@@ -1328,47 +1270,20 @@
         </div>
         <div class="hero__visual" aria-hidden="true">
           <div class="hero-glow"></div>
-          <div class="hero-phone">
-            <div class="hero-phone__notch"></div>
-            <div class="hero-phone__screen">
-              <div class="hero-phone__post">
-                <div class="hero-phone__avatar" style="background:linear-gradient(135deg,#f09433,#dc2743)"></div>
-                <div class="hero-phone__text">
-                  <div class="hero-phone__line" style="width:82%"></div>
-                  <div class="hero-phone__line" style="width:55%"></div>
-                </div>
-              </div>
-              <div class="hero-phone__img" style="background:linear-gradient(135deg,var(--c-sage-light),var(--c-sage))"></div>
-              <div class="hero-phone__actions">
-                <div class="hero-phone__action-dot"></div>
-                <div class="hero-phone__action-dot"></div>
-                <div class="hero-phone__action-dot"></div>
-              </div>
-              <div class="hero-phone__post">
-                <div class="hero-phone__avatar" style="background:#14171A"></div>
-                <div class="hero-phone__text">
-                  <div class="hero-phone__line" style="width:90%"></div>
-                  <div class="hero-phone__line" style="width:60%"></div>
-                </div>
-              </div>
-              <div class="hero-phone__post">
-                <div class="hero-phone__avatar" style="background:linear-gradient(135deg,#25F4EE,#FE2C55)"></div>
-                <div class="hero-phone__text">
-                  <div class="hero-phone__line" style="width:72%"></div>
-                  <div class="hero-phone__line" style="width:48%"></div>
-                </div>
-              </div>
+          <figure class="hero-mascot">
+            <div class="hero-mascot__frame">
+              <img class="hero-mascot__img" src="assets/jassmin-character.jpg" width="1024" height="777" alt="" loading="eager" decoding="async">
             </div>
-          </div>
+          </figure>
           <div class="hero-float hero-float--heart">
-            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true"><path d="M10 17.5l-1.45-1.32C3.4 11.36 0 8.28 0 4.5 0 1.42 2.42 0 5 0c1.74 0 3.41.81 5 2.28C11.59.81 13.26 0 15 0c2.58 0 5 1.42 5 4.5 0 3.78-3.4 6.86-8.55 11.68L10 17.5z" fill="#E2694D"/></svg>
+            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" aria-hidden="true"><path d="M10 17.5l-1.45-1.32C3.4 11.36 0 8.28 0 4.5 0 1.42 2.42 0 5 0c1.74 0 3.41.81 5 2.28C11.59.81 13.26 0 15 0c2.58 0 5 1.42 5 4.5 0 3.78-3.4 6.86-8.55 11.68L10 17.5z" fill="#3A6DB0"/></svg>
           </div>
           <div class="hero-float hero-float--yen">&yen;</div>
           <div class="hero-float hero-float--arrow">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 15L15 3M15 3H7M15 3v8" stroke="#6EAE9A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 15L15 3M15 3H7M15 3v8" stroke="#0F7EA0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
           <div class="hero-float hero-float--star">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 0l2.35 5.18L16 5.82l-4 3.64L13.18 16 8 12.9 2.82 16 4 9.46 0 5.82l5.65-.64L8 0z" fill="#D4A853"/></svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 0l2.35 5.18L16 5.82l-4 3.64L13.18 16 8 12.9 2.82 16 4 9.46 0 5.82l5.65-.64L8 0z" fill="#5CBFE0"/></svg>
           </div>
         </div>
       </div>
