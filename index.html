@@ -319,25 +319,17 @@
       flex-shrink: 0;
     }
 
-    /* Hero Visual */
+    /* Hero Visual（マスコット画像のみ） */
     .hero__visual {
-      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 380px;
     }
 
-    .hero-glow {
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, rgba(92, 191, 224, 0.16) 0%, rgba(58, 109, 176, 0.08) 50%, transparent 70%);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      animation: hero-glow-pulse 5s ease-in-out infinite;
+    .hero__mascot {
+      width: min(100%, 280px);
+      height: auto;
+      display: block;
     }
 
     .hero-enter {
@@ -350,27 +342,6 @@
     .hero-enter--3 { animation-delay: 0.3s; }
     .hero-enter--4 { animation-delay: 0.42s; }
     .hero-enter--5 { animation-delay: 0.54s; }
-    .hero-enter--viz {
-      animation-name: hero-visual-in;
-      animation-duration: 1.05s;
-      animation-delay: 0.2s;
-    }
-
-    .hero-mascot {
-      position: relative;
-      z-index: 1;
-      width: min(100%, 340px);
-      margin: 0;
-      transform-origin: 50% 88%;
-      animation: hero-phone-sway 6.5s ease-in-out infinite;
-    }
-
-    .hero-mascot__img {
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
-    }
 
     .hero .btn--primary {
       animation: hero-cta-glow 3.2s ease-in-out infinite;
@@ -1096,11 +1067,6 @@
       70% { transform: scale(0.98) translate(3%, -2%); opacity: 1; }
     }
 
-    @keyframes hero-glow-pulse {
-      0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 0.85; transform: translate(-50%, -50%) scale(1.08); }
-    }
-
     @keyframes hero-rise {
       from {
         opacity: 0;
@@ -1110,22 +1076,6 @@
         opacity: 1;
         transform: translate3d(0, 0, 0);
       }
-    }
-
-    @keyframes hero-visual-in {
-      from {
-        opacity: 0;
-        transform: translate3d(0, 44px, 0) scale(0.92) rotate(-2deg);
-      }
-      to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
-      }
-    }
-
-    @keyframes hero-phone-sway {
-      0%, 100% { transform: rotate(-1.4deg) translateY(0); }
-      50% { transform: rotate(1.4deg) translateY(-7px); }
     }
 
     @keyframes hero-cta-glow {
@@ -1159,18 +1109,15 @@
       html { scroll-behavior: auto; }
       .header { animation: none; }
       .hero::before { animation: none; }
-      .hero-glow { animation: none; }
       .hero-enter,
       .hero-enter--1,
       .hero-enter--2,
       .hero-enter--3,
       .hero-enter--4,
-      .hero-enter--5,
-      .hero-enter--viz {
+      .hero-enter--5 {
         animation: none !important;
         opacity: 1 !important;
       }
-      .hero-mascot { animation: none; }
       .hero .btn--primary { animation: none; }
       .mid-cta { animation: none; background-size: auto; }
       .about::before,
@@ -1193,7 +1140,6 @@
       }
 
       .hero__visual {
-        min-height: 320px;
         order: -1;
       }
 
@@ -1236,11 +1182,7 @@
         padding-top: 2rem;
       }
 
-      .hero__visual {
-        min-height: 280px;
-      }
-
-      .hero-mascot {
+      .hero__mascot {
         width: min(100%, 260px);
         margin-left: auto;
         margin-right: auto;
@@ -1282,12 +1224,8 @@
     }
 
     @media (max-width: 480px) {
-      .hero-mascot {
-        width: min(100%, 240px);
-      }
-
-      .hero__visual {
-        min-height: 240px;
+      .hero__mascot {
+        width: min(100%, 220px);
       }
 
       .sns-icon {
@@ -1338,11 +1276,8 @@
             <li>最短3分</li>
           </ul>
         </div>
-        <div class="hero__visual hero-enter hero-enter--viz" aria-hidden="true">
-          <div class="hero-glow"></div>
-          <figure class="hero-mascot">
-            <img class="hero-mascot__img" src="assets/jassmin-mascot.png" width="737" height="607" alt="" loading="eager" decoding="async">
-          </figure>
+        <div class="hero__visual" aria-hidden="true">
+          <img class="hero__mascot" src="assets/jassmin-mascot.png" width="737" height="607" alt="" loading="eager" decoding="async">
         </div>
       </div>
     </section>
