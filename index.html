@@ -1120,11 +1120,10 @@
     @media (max-width: 1023px) {
       .hero__grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
       }
 
       .hero__visual {
-        order: -1;
         max-width: min(340px, 85vw);
         justify-self: center;
       }
@@ -1165,15 +1164,60 @@
       .br-pc { display: none; }
 
       .hero {
-        padding-top: 2rem;
+        min-height: auto;
+        padding: 1.75rem 0 4rem;
+        align-items: flex-start;
+      }
+
+      .hero__grid {
+        gap: 1.1rem;
+      }
+
+      .hero__content {
+        max-width: 32rem;
+      }
+
+      .hero__label {
+        margin-bottom: 1rem;
+      }
+
+      .hero__title {
+        font-size: clamp(1.9rem, 8vw, 2.4rem);
+        line-height: 1.22;
+        margin-bottom: 1rem;
+      }
+
+      .hero__sub {
+        font-size: 0.96rem;
+        line-height: 1.75;
+        margin-bottom: 1.4rem;
+      }
+
+      .hero__visual {
+        max-width: min(210px, 58vw);
+        margin: 0 auto;
       }
 
       .hero__cta-group {
         flex-direction: column;
+        gap: 0.65rem;
+        margin-bottom: 1.25rem;
       }
 
       .hero__cta-group .btn {
         width: 100%;
+      }
+
+      .hero__badges {
+        gap: 0.4rem 0.9rem;
+      }
+
+      .hero__badges li {
+        font-size: 0.75rem;
+      }
+
+      .hero__badges li:last-child {
+        display: none;
       }
 
       .audience__grid {
